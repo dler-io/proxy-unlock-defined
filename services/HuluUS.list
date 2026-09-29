@@ -1,0 +1,10 @@
+# HuluUS
+# 服务域名规则；出口由节点的 region 配置
++.assetshuluimcom-a.akamaihd.net
++.cws-hulu.conviva.com
++.hulu.com
++.hulu.hb.omtrdc.net
++.hulu.sc.omtrdc.net
++.huluad.com
++.huluqa.com
++.hulustream.com

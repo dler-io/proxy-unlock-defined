@@ -1,0 +1,15 @@
+# Eurosport
+# 服务域名规则；出口由节点的 region 配置
++.eu3-prod-images.disco-api.com
++.eu3-prod.disco-api.com
++.europe-fastly-mediashield-live-prod.cdn.h264.io
++.eurosport-dlvr-ott-vod.akamaized.net
++.eurosport-dlvr-ott.akamaized.net
++.eurosport.com
++.eurosport.es
++.eurosport.fr
++.eurosport.io
++.eurosport.ro
++.eurosport.ru
++.eurosportplayer.com
++.media-shield.live.eurosport.map.fastly.net

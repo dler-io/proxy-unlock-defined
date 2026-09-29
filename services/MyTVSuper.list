@@ -1,0 +1,6 @@
+# MyTVSuper
+# 服务域名规则；出口由节点的 region 配置
++.mytvsuper.com
++.mytvsuperlimited.hb.omtrdc.net
++.mytvsuperlimited.sc.omtrdc.net
++.tvb.com

@@ -1,0 +1,12 @@
+# ESPN
+# 服务域名规则；出口由节点的 region 配置
++.espn-cannonball-cdn.bamgrid.com
++.espn.api.edge.bamgrid.com
++.espn.com
++.espn.hb.omtrdc.net
++.espn.net
++.espncdn.com
++.espnqa.com
++.j95vwycl9a.execute-api.us-east-1.amazonaws.com
++.pespn.chartbeat.net
++.watchespn.com

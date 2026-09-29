@@ -1,0 +1,10 @@
+# Disney
+# 服务域名规则；出口由节点的 region 配置
++.cdn.registerdisney.go.com
++.disney-plus.net
++.disney.api.edge.bamgrid.com
++.disney.connections.edge.bamgrid.com
++.disneynow.com
++.disneyplus.com
++.disneystreaming.com
++.dssott.com

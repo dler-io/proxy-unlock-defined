@@ -1,0 +1,7 @@
+# Stan
+# 服务域名规则；出口由节点的 region 配置
++.live01-stan.akamaized.net
++.live02-stan.akamaized.net
++.stan.com.au
++.stan.video
++.streamcoimg-a.akamaihd.net

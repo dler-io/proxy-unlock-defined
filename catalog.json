@@ -1,0 +1,700 @@
+{
+  "schema_version": 1,
+  "services": [
+    {
+      "id": "10Play",
+      "name": "10 play",
+      "path": "services/10Play.list",
+      "status": "imported"
+    },
+    {
+      "id": "4GTV",
+      "name": "4GTV",
+      "path": "services/4GTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "7Plus",
+      "name": "7plus",
+      "path": "services/7Plus.list",
+      "status": "imported"
+    },
+    {
+      "id": "9Now",
+      "name": "9 now",
+      "path": "services/9Now.list",
+      "status": "imported"
+    },
+    {
+      "id": "ABCIView",
+      "name": "ABC iView",
+      "path": "services/ABCIView.list",
+      "status": "imported"
+    },
+    {
+      "id": "AETV",
+      "name": "A&E TV",
+      "path": "services/AETV.list",
+      "status": "imported"
+    },
+    {
+      "id": "AI",
+      "name": "AI",
+      "path": "services/AI.list",
+      "status": "imported",
+      "note": "保留现有 AI 服务键，含共享登录、验证码和 API 主机；按域名分流会影响该主机全部业务"
+    },
+    {
+      "id": "Abema",
+      "name": "Abema",
+      "path": "services/Abema.list",
+      "status": "imported"
+    },
+    {
+      "id": "AcornTV",
+      "name": "Acorn TV (US/AU)",
+      "path": "services/AcornTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "AfreecaTV",
+      "name": "Afreeca TV",
+      "path": "services/AfreecaTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "Anime1",
+      "name": "Anime1",
+      "path": "services/Anime1.list",
+      "status": "imported"
+    },
+    {
+      "id": "AnimeFesta",
+      "name": "AnimeFesta",
+      "path": "services/AnimeFesta.list",
+      "status": "imported"
+    },
+    {
+      "id": "BBC",
+      "name": "BBC",
+      "path": "services/BBC.list",
+      "status": "imported"
+    },
+    {
+      "id": "Bahamut",
+      "name": "Bahamut",
+      "path": "services/Bahamut.list",
+      "status": "imported"
+    },
+    {
+      "id": "Bilibili",
+      "name": "BiliBili",
+      "path": "services/Bilibili.list",
+      "status": "imported"
+    },
+    {
+      "id": "BritBox",
+      "name": "BritBox (US/EU/AU)",
+      "path": "services/BritBox.list",
+      "status": "imported"
+    },
+    {
+      "id": "CBCGem",
+      "name": "CBC Gem",
+      "path": "services/CBCGem.list",
+      "status": "imported"
+    },
+    {
+      "id": "CW",
+      "name": "CW",
+      "path": "services/CW.list",
+      "status": "imported"
+    },
+    {
+      "id": "CanalPlus",
+      "name": "CanalPlus",
+      "path": "services/CanalPlus.list",
+      "status": "imported"
+    },
+    {
+      "id": "CatchPlay",
+      "name": "CatchPlay+",
+      "path": "services/CatchPlay.list",
+      "status": "imported"
+    },
+    {
+      "id": "Channel4",
+      "name": "Channel 4",
+      "path": "services/Channel4.list",
+      "status": "imported"
+    },
+    {
+      "id": "Channel5",
+      "name": "Channel 5",
+      "path": "services/Channel5.list",
+      "status": "imported"
+    },
+    {
+      "id": "CoupangPlay",
+      "name": "Coupang Play",
+      "path": "services/CoupangPlay.list",
+      "status": "imported"
+    },
+    {
+      "id": "Crackle",
+      "name": "Crackle",
+      "path": "services/Crackle.list",
+      "status": "imported"
+    },
+    {
+      "id": "Crave",
+      "name": "Crave TV",
+      "path": "services/Crave.list",
+      "status": "imported"
+    },
+    {
+      "id": "Crunchyroll",
+      "name": "Crunchyroll",
+      "path": "services/Crunchyroll.list",
+      "status": "imported"
+    },
+    {
+      "id": "DAZN",
+      "name": "DAZN",
+      "path": "services/DAZN.list",
+      "status": "imported",
+      "note": "合并原 DAZN 和 JP/Other 中重复的两个 CloudFront 域名"
+    },
+    {
+      "id": "DMM",
+      "name": "DMM",
+      "path": "services/DMM.list",
+      "status": "imported"
+    },
+    {
+      "id": "Dcard",
+      "name": "Dcard",
+      "path": "services/Dcard.list",
+      "status": "imported"
+    },
+    {
+      "id": "DirecTV",
+      "name": "DirecTV",
+      "path": "services/DirecTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "DiscoveryPlus",
+      "name": "Discovery+ (US/EU)",
+      "path": "services/DiscoveryPlus.list",
+      "status": "imported"
+    },
+    {
+      "id": "Disney",
+      "name": "Disney",
+      "path": "services/Disney.list",
+      "status": "imported"
+    },
+    {
+      "id": "Docplay",
+      "name": "Docplay",
+      "path": "services/Docplay.list",
+      "status": "imported"
+    },
+    {
+      "id": "ESPN",
+      "name": "ESPN+",
+      "path": "services/ESPN.list",
+      "status": "imported"
+    },
+    {
+      "id": "EncoreTVB",
+      "name": "encoreTVB",
+      "path": "services/EncoreTVB.list",
+      "status": "imported"
+    },
+    {
+      "id": "Epix",
+      "name": "Epix",
+      "path": "services/Epix.list",
+      "status": "imported"
+    },
+    {
+      "id": "Eurosport",
+      "name": "EuroSport (EU)",
+      "path": "services/Eurosport.list",
+      "status": "imported"
+    },
+    {
+      "id": "F1TV",
+      "name": "F1TV",
+      "path": "services/F1TV.list",
+      "status": "imported"
+    },
+    {
+      "id": "FOX",
+      "name": "FOX",
+      "path": "services/FOX.list",
+      "status": "imported"
+    },
+    {
+      "id": "FXNow",
+      "name": "FXNow",
+      "path": "services/FXNow.list",
+      "status": "imported"
+    },
+    {
+      "id": "FridayVideo",
+      "name": "Friday Video",
+      "path": "services/FridayVideo.list",
+      "status": "imported"
+    },
+    {
+      "id": "FuboTV",
+      "name": "Fubo TV",
+      "path": "services/FuboTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "FujiTV",
+      "name": "Fuji TV",
+      "path": "services/FujiTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "Funimation",
+      "name": "Funimation (US/EU)",
+      "path": "legacy/Funimation.list",
+      "status": "legacy"
+    },
+    {
+      "id": "GYAO",
+      "name": "GYAO!",
+      "path": "legacy/GYAO.list",
+      "status": "legacy"
+    },
+    {
+      "id": "Google",
+      "name": "Google",
+      "path": "services/Google.list",
+      "status": "imported",
+      "note": "覆盖 Google 多个业务的大范围规则，AI 子域例外见 policy/overlaps.json"
+    },
+    {
+      "id": "HBOGOAsia",
+      "name": "HBO GO Asia",
+      "path": "services/HBOGOAsia.list",
+      "status": "imported",
+      "note": "历史域名集合，未验证当前业务可用性"
+    },
+    {
+      "id": "HBOMax",
+      "name": "HBO Max (HK/TW/SG/US/EU)",
+      "path": "services/HBOMax.list",
+      "status": "imported"
+    },
+    {
+      "id": "HKDTMB",
+      "name": "HKDTMB",
+      "path": "services/HKDTMB.list",
+      "status": "imported"
+    },
+    {
+      "id": "HOYTV",
+      "name": "HOY TV",
+      "path": "services/HOYTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "HamiVideo",
+      "name": "Hami Video",
+      "path": "services/HamiVideo.list",
+      "status": "imported"
+    },
+    {
+      "id": "HuluJP",
+      "name": "Hulu (JP)",
+      "path": "services/HuluJP.list",
+      "status": "imported"
+    },
+    {
+      "id": "HuluUS",
+      "name": "Hulu (US)",
+      "path": "services/HuluUS.list",
+      "status": "imported"
+    },
+    {
+      "id": "ITV",
+      "name": "ITV Hub",
+      "path": "services/ITV.list",
+      "status": "imported"
+    },
+    {
+      "id": "Instagram",
+      "name": "Instagram",
+      "path": "services/Instagram.list",
+      "status": "imported"
+    },
+    {
+      "id": "JCOM",
+      "name": "J:com On Demand",
+      "path": "services/JCOM.list",
+      "status": "imported"
+    },
+    {
+      "id": "JapaneseGames",
+      "name": "JapaneseGames",
+      "path": "services/JapaneseGames.list",
+      "status": "imported",
+      "note": "沿用原日本游戏合集，多个游戏共用一个服务键"
+    },
+    {
+      "id": "Joyn",
+      "name": "Joyn",
+      "path": "services/Joyn.list",
+      "status": "imported"
+    },
+    {
+      "id": "KBS",
+      "name": "KBS Domestic",
+      "path": "services/KBS.list",
+      "status": "imported"
+    },
+    {
+      "id": "KKTV",
+      "name": "KKTV",
+      "path": "services/KKTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "KaraokeDAM",
+      "name": "Karaoke@DAM",
+      "path": "services/KaraokeDAM.list",
+      "status": "imported"
+    },
+    {
+      "id": "Kocowa",
+      "name": "Kocowa",
+      "path": "services/Kocowa.list",
+      "status": "imported"
+    },
+    {
+      "id": "Lemino",
+      "name": "Lemino",
+      "path": "services/Lemino.list",
+      "status": "imported"
+    },
+    {
+      "id": "LiTV",
+      "name": "LiTV",
+      "path": "services/LiTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "LineTV",
+      "name": "LineTV.TW",
+      "path": "services/LineTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "LineToday",
+      "name": "Line Today",
+      "path": "services/LineToday.list",
+      "status": "imported"
+    },
+    {
+      "id": "Melon",
+      "name": "Melon",
+      "path": "services/Melon.list",
+      "status": "imported"
+    },
+    {
+      "id": "Molotov",
+      "name": "Molotov",
+      "path": "services/Molotov.list",
+      "status": "imported",
+      "note": "从 DE/Other 和 FR/Molotov 中统一提取，节点单独配置出口"
+    },
+    {
+      "id": "Mora",
+      "name": "Mora",
+      "path": "services/Mora.list",
+      "status": "imported"
+    },
+    {
+      "id": "MusicJP",
+      "name": "music.jp",
+      "path": "services/MusicJP.list",
+      "status": "imported"
+    },
+    {
+      "id": "MyTVSuper",
+      "name": "MyTVSuper",
+      "path": "services/MyTVSuper.list",
+      "status": "imported"
+    },
+    {
+      "id": "MyVideo",
+      "name": "MyVideo",
+      "path": "services/MyVideo.list",
+      "status": "imported"
+    },
+    {
+      "id": "NBA",
+      "name": "NBA TV",
+      "path": "services/NBA.list",
+      "status": "imported"
+    },
+    {
+      "id": "NBC",
+      "name": "NBC TV",
+      "path": "services/NBC.list",
+      "status": "imported"
+    },
+    {
+      "id": "NFL",
+      "name": "NFL+",
+      "path": "services/NFL.list",
+      "status": "imported"
+    },
+    {
+      "id": "Netflix",
+      "name": "Netflix",
+      "path": "services/Netflix.list",
+      "status": "imported"
+    },
+    {
+      "id": "Niconico",
+      "name": "Niconico",
+      "path": "services/Niconico.list",
+      "status": "imported"
+    },
+    {
+      "id": "Now",
+      "name": "Now E / Now TV",
+      "path": "services/Now.list",
+      "status": "imported"
+    },
+    {
+      "id": "Ofiii",
+      "name": "ofiii",
+      "path": "services/Ofiii.list",
+      "status": "imported"
+    },
+    {
+      "id": "OptusSport",
+      "name": "Optus",
+      "path": "services/OptusSport.list",
+      "status": "imported"
+    },
+    {
+      "id": "ParamountPlus",
+      "name": "Paramount+",
+      "path": "services/ParamountPlus.list",
+      "status": "imported"
+    },
+    {
+      "id": "Paravi",
+      "name": "Paravi",
+      "path": "services/Paravi.list",
+      "status": "imported",
+      "note": "沿用旧规则，未验证服务存续，不代表当前可用"
+    },
+    {
+      "id": "Peacock",
+      "name": "Peacock TV",
+      "path": "services/Peacock.list",
+      "status": "imported"
+    },
+    {
+      "id": "Philo",
+      "name": "Philo",
+      "path": "services/Philo.list",
+      "status": "imported"
+    },
+    {
+      "id": "PlutoTV",
+      "name": "Pluto TV",
+      "path": "services/PlutoTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "Popcornflix",
+      "name": "Popcornflix",
+      "path": "services/Popcornflix.list",
+      "status": "imported"
+    },
+    {
+      "id": "Radiko",
+      "name": "Radiko",
+      "path": "services/Radiko.list",
+      "status": "imported"
+    },
+    {
+      "id": "RakutenTV",
+      "name": "Rakuten TV (EU)",
+      "path": "services/RakutenTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "SBS",
+      "name": "SBS on Demand",
+      "path": "services/SBS.list",
+      "status": "imported"
+    },
+    {
+      "id": "Salto",
+      "name": "Salto",
+      "path": "services/Salto.list",
+      "status": "imported",
+      "note": "沿用旧规则，未验证服务存续，不代表当前可用"
+    },
+    {
+      "id": "Shared",
+      "name": "Shared",
+      "path": "review/Shared.list",
+      "status": "review",
+      "note": "原规则在多个业务间重复的共享平台域名，没有可通用的单一地区；不默认启用"
+    },
+    {
+      "id": "Showtime",
+      "name": "SHOWTIME (US/AU)",
+      "path": "services/Showtime.list",
+      "status": "imported"
+    },
+    {
+      "id": "Shudder",
+      "name": "Shudder",
+      "path": "services/Shudder.list",
+      "status": "imported"
+    },
+    {
+      "id": "SkyGo",
+      "name": "Sky GO",
+      "path": "services/SkyGo.list",
+      "status": "imported"
+    },
+    {
+      "id": "SkyShowtime",
+      "name": "SkyShowTime (EU)",
+      "path": "services/SkyShowtime.list",
+      "status": "imported"
+    },
+    {
+      "id": "SlingTV",
+      "name": "Sling TV",
+      "path": "services/SlingTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "Spotify",
+      "name": "Spotify",
+      "path": "services/Spotify.list",
+      "status": "imported"
+    },
+    {
+      "id": "Stan",
+      "name": "Stan",
+      "path": "services/Stan.list",
+      "status": "imported"
+    },
+    {
+      "id": "StarPlus",
+      "name": "Star+",
+      "path": "services/StarPlus.list",
+      "status": "imported"
+    },
+    {
+      "id": "Starz",
+      "name": "Starz",
+      "path": "services/Starz.list",
+      "status": "imported"
+    },
+    {
+      "id": "Streamotion",
+      "name": "Binge/Kayo Sports",
+      "path": "services/Streamotion.list",
+      "status": "imported"
+    },
+    {
+      "id": "TLCGO",
+      "name": "TLC GO",
+      "path": "services/TLCGO.list",
+      "status": "imported"
+    },
+    {
+      "id": "TVer",
+      "name": "TVer",
+      "path": "services/TVer.list",
+      "status": "imported"
+    },
+    {
+      "id": "Telasa",
+      "name": "Telasa",
+      "path": "services/Telasa.list",
+      "status": "imported"
+    },
+    {
+      "id": "TikTok",
+      "name": "TikTok",
+      "path": "services/TikTok.list",
+      "status": "imported"
+    },
+    {
+      "id": "TubiTV",
+      "name": "Tubi TV",
+      "path": "services/TubiTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "Tving",
+      "name": "Tving",
+      "path": "services/Tving.list",
+      "status": "imported"
+    },
+    {
+      "id": "UNext",
+      "name": "U-NEXT",
+      "path": "services/UNext.list",
+      "status": "imported"
+    },
+    {
+      "id": "Unclassified",
+      "name": "Unclassified",
+      "path": "review/Unclassified.list",
+      "status": "review",
+      "note": "原 Other/Reads 条目，暂未确认服务归属；不默认启用"
+    },
+    {
+      "id": "VideoMarket",
+      "name": "DMM / VideoMarket",
+      "path": "services/VideoMarket.list",
+      "status": "imported",
+      "note": "从 JP 和 JP_S/DMM 中统一提取，节点须明确选择一个出口"
+    },
+    {
+      "id": "ViuTV",
+      "name": "Viu TV / Viu.TV",
+      "path": "services/ViuTV.list",
+      "status": "imported"
+    },
+    {
+      "id": "WOWOW",
+      "name": "WOWOW",
+      "path": "services/WOWOW.list",
+      "status": "imported"
+    },
+    {
+      "id": "Wavve",
+      "name": "Wavve",
+      "path": "services/Wavve.list",
+      "status": "imported"
+    },
+    {
+      "id": "ZDF",
+      "name": "ZDF",
+      "path": "services/ZDF.list",
+      "status": "imported"
+    }
+  ]
+}

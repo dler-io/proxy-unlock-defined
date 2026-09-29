@@ -1,0 +1,6 @@
+# 7Plus
+# 服务域名规则；出口由节点的 region 配置
++.7plus-sevennetwork.akamaized.net
++.7plus.com.au
++.npc-live-sevennetwork.akamaized.net
++.seven.demdex.net

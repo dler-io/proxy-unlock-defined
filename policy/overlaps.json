@@ -1,0 +1,191 @@
+[
+  {
+    "parent_service": "BBC",
+    "parent_rule": "+.bbci.co.uk",
+    "child_service": "BritBox",
+    "child_rule": "+.vod-dash-ntham-comm.live.cf.md.bbci.co.uk",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 BritBox 独立配置出口"
+  },
+  {
+    "parent_service": "BBC",
+    "parent_rule": "+.bbci.co.uk",
+    "child_service": "BritBox",
+    "child_rule": "+.vod-hls-ntham-comm.live.cf.md.bbci.co.uk",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 BritBox 独立配置出口"
+  },
+  {
+    "parent_service": "DiscoveryPlus",
+    "parent_rule": "+.disco-api.com",
+    "child_service": "Eurosport",
+    "child_rule": "+.eu3-prod-images.disco-api.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 Eurosport 独立配置出口"
+  },
+  {
+    "parent_service": "DiscoveryPlus",
+    "parent_rule": "+.disco-api.com",
+    "child_service": "Eurosport",
+    "child_rule": "+.eu3-prod.disco-api.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 Eurosport 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.aistudio.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.antigravity.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.bard.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.gemini.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.jules.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.makersuite.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.notebook.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.notebooklm.cloud.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.notebooklm.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.opal.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "alkalicore-pa.clients6.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "alkalimakersuite-pa.clients6.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "apis.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "waa-pa.clients6.google.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "+.aisandbox-pa.googleapis.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "+.geller-pa.googleapis.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "+.generativelanguage.googleapis.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "+.proactivebackend-pa.googleapis.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "+.robinfrontend-pa.googleapis.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "appcatalyst.pa.googleapis.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "cloudcode-pa.googleapis.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "jules.googleapis.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Shared",
+    "parent_rule": "+.theplatform.com",
+    "child_service": "ParamountPlus",
+    "child_rule": "+.link.theplatform.com",
+    "reason": "保留原规则中更具体子域优先的语义，子域由 ParamountPlus 独立配置出口"
+  }
+]

@@ -1,0 +1,19 @@
+# HBOGOAsia
+# 服务域名规则；出口由节点的 region 配置
++.bcbolthboa-a.akamaihd.net
++.dai3fd1oh325y.cloudfront.net
++.hboasia1-i.akamaihd.net
++.hboasia2-i.akamaihd.net
++.hboasia3-i.akamaihd.net
++.hboasia4-i.akamaihd.net
++.hboasia5-i.akamaihd.net
++.hboasialive.akamaized.net
++.hbogo.co.th
++.hbogoasia.com
++.hbogoasia.hk
++.hbogoasia.id
++.hbogoasia.ph
++.hbogoasia.sg
++.hbogoasia.tw
++.hbogoprod-vod.akamaized.net
++.hbolb.onwardsmg.com

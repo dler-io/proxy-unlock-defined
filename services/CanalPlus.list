@@ -1,0 +1,8 @@
+# CanalPlus
+# 服务域名规则；出口由节点的 region 配置
++.canal-plus.com
++.canalplus-bo.net
++.canalplus-cdn.net
++.canalplus.com
++.canalplus.pro
++.mycanal.fr

@@ -1,0 +1,4 @@
+# FujiTV
+# 服务域名规则；出口由节点的 region 配置
++.fujitv.co.jp
++.stream.ne.jp

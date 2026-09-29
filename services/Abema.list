@@ -1,0 +1,14 @@
+# Abema
+# 服务域名规则；出口由节点的 region 配置
++.abema-tv.com
++.abema.io
++.abema.tv
++.ameba.jp
++.bucketeer.jp
++.ds-linear-abematv.akamaized.net
++.ds-vod-abematv.akamaized.net
++.hayabusa.io
++.hayabusa.media
++.linear-abematv.akamaized.net
++.vod-abematv.akamaized.net
++.vod-playout-abematv.akamaized.net

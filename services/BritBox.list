@@ -1,0 +1,8 @@
+# BritBox
+# 服务域名规则；出口由节点的 region 配置
++.britbox.com
++.d2z3p34itxwaj7.cloudfront.net
++.vod-dash-ntham-comm-live.akamaized.net
++.vod-dash-ntham-comm.live.cf.md.bbci.co.uk
++.vod-hls-ntham-comm-live.akamaized.net
++.vod-hls-ntham-comm.live.cf.md.bbci.co.uk

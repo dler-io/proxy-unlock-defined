@@ -1,0 +1,4 @@
+# Peacock
+# 服务域名规则；出口由节点的 region 配置
++.peacock.com
++.peacocktv.com

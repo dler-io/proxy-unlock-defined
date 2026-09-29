@@ -1,0 +1,7 @@
+# 10Play
+# 服务域名规则；出口由节点的 region 配置
++.10play.com.au
++.d25m2gzplgnf0.cloudfront.net
++.global.ssl.fastly.net
++.net10-livestream-keys.play.cbsi.video
++.net10-livestream.play.cbsi.video

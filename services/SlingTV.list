@@ -1,0 +1,7 @@
+# SlingTV
+# 服务域名规则；出口由节点的 region 配置
++.dishworld.com
++.movenetworks.com
++.movetv.com
++.sling.com
++.slinginternational.com

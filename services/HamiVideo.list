@@ -1,0 +1,9 @@
+# HamiVideo
+# 服务域名规则；出口由节点的 region 配置
++.apl-hamivideo.cdn.hinet.net
++.hamivideo.hinet.net
++.previewvod-hamivideo.cdn.hinet.net
++.scc.ott.hinet.net
++.static-hamivideo.cdn.hinet.net
++.webvodad-hamivideo.cdn.hinet.net
++.widevine.ott.hinet.net

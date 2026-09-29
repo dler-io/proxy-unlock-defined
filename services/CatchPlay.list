@@ -1,0 +1,5 @@
+# CatchPlay
+# 服务域名规则；出口由节点的 region 配置
++.catchplay.com
++.d2ivmxp5z2ww0n.cloudfront.net
++.ols-ww100-cp.akamaized.net

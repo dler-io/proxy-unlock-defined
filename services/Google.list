@@ -1,0 +1,13 @@
+# Google
+# 服务域名规则；出口由节点的 region 配置
++.ggpht.com
++.google.cn
++.google.com
++.googleapis.cn
++.googleapis.com
++.googleusercontent.com
++.gstatic.com
++.pki.goog
++.redirector.googlevideo.com
++.xn--ngstr-lra8j.com
++.youtube.com

@@ -1,0 +1,10 @@
+# FOX
+# 服务域名规则；出口由节点的 region 配置
++.cdn-fox-networks-group-green.akamaized.net
++.d3cv4a9a9wh0bt.cloudfront.net
++.fox.com
++.foxdcg.com
++.foxsports01-i.akamaihd.net
++.foxsports02-i.akamaihd.net
++.foxsports03-i.akamaihd.net
++.x-live-fox-stgec.uplynk.com

@@ -1,0 +1,9 @@
+# Netflix
+# 服务域名规则；出口由节点的 region 配置
++.netflix.com
++.netflix.net
++.nflxext.com
++.nflximg.com
++.nflximg.net
++.nflxso.net
++.nflxvideo.net
