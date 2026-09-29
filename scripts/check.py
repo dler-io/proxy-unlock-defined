@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate the catalog and domain ownership without network access."""
 import json
+from ipaddress import ip_address
 from pathlib import Path
 import re
 import sys
@@ -18,8 +19,14 @@ def read_lines(path):
 
 def valid_rule(rule):
     host = rule.removeprefix("+.")
-    return (bool(host) and len(host) <= 253 and
-            all(LABEL.fullmatch(label) for label in host.split(".")))
+    if not (host and len(host) <= 253 and
+            all(LABEL.fullmatch(label) for label in host.split("."))):
+        return False
+    try:
+        ip_address(host)
+    except ValueError:
+        return True
+    return False
 
 
 def ownership_keys(rule):
@@ -134,6 +141,9 @@ def catalog_material(root=ROOT):
                 paths.add(part_path)
                 add_resource(f"{service}_{key}", {"path": part_path, "status": status,
                              "name": part["name"], "parent": service}, values)
+            overlaps = find_overlaps(part_rules)
+            if overlaps:
+                raise ValueError(f"{service}: suffix overlap between parts: {sorted(overlaps)}")
             # Keep duplicates here so ownership validation rejects overlapping parts.
             patterns = sorted(p for values in part_rules.values() for p in values)
             generated[path] = generated_text(service, list(part_paths.values()), patterns)

@@ -26,7 +26,7 @@
 api.example.com
 ```
 
-仓库统一使用精确域名与 `+.` 后缀模式；不接受 USER-AGENT、DOMAIN-KEYWORD 等规则类型
+仓库统一使用精确域名与 `+.` 后缀模式；不接受 IP 地址、CIDR、USER-AGENT、DOMAIN-KEYWORD 等规则类型
 
 接入示例：
 

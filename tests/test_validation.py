@@ -41,6 +41,12 @@ class ValidationTests(unittest.TestCase):
         # This policy removes entries; it is not a runtime domain denylist
         self.assertEqual(lint_rules({"A": ["+.example.com"]}, [], {"old.example.com"}), [])
 
+    def test_ip_literals_are_not_domain_rules(self):
+        for pattern in ["192.0.2.1", "+.192.0.2.1", "2001:db8::1", "192.0.2.0/24"]:
+            self.assertFalse(valid_rule(pattern), pattern)
+            self.assertTrue(lint_rules({"Service": [pattern]}, [], set()), pattern)
+        self.assertTrue(valid_rule("192.0.2.1.example.com"))
+
     def test_render_requires_explicit_valid_bindings(self):
         output = render(["Netflix=SG", "AI=AI"], ref="a" * 40)
         self.assertIn("/" + "a" * 40 + "/services/Netflix.list", output)
@@ -75,6 +81,17 @@ class ValidationTests(unittest.TestCase):
         part.write_text("\n".join(sorted(read_lines(part) + ["+.tvb.com"])) + "\n")
         with self.assertRaisesRegex(ValueError, "duplicate match"):
             build(root)
+
+    def test_nested_overlap_between_parts_is_rejected(self):
+        for pattern in ["stream.tvb.com", "+.stream.tvb.com"]:
+            with self.subTest(pattern=pattern):
+                root = self.fixture()
+                part = root / "parts/MyTVSuper/Analytics.list"
+                part.write_text("\n".join(sorted(read_lines(part) + [pattern])) + "\n")
+                with self.assertRaisesRegex(ValueError, "suffix overlap between parts"):
+                    build(root)
+                with self.assertRaisesRegex(ValueError, "suffix overlap between parts"):
+                    check(root)
 
     def test_composed_subset_and_full_service_update_together(self):
         root = self.fixture()
