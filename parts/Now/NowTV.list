@@ -1,0 +1,4 @@
+# Now / NowTV
+# Canonical subset; outbound selection belongs in node configuration
++.now-tv.com
++.pccw-cf-epl.akamaized.net

@@ -1,5 +1,6 @@
 # Unclassified
-# 服务域名规则；出口由节点的 region 配置
+# Generated from: parts/Unclassified/JapaneseSites.list, parts/Unclassified/NStatic.list, parts/Unclassified/RakutenMagazine.list, parts/Unclassified/SharedHosts.list, parts/Unclassified/Usercentrics.list
+# Edit the canonical parts and run python3 scripts/build.py
 +.akabeesoft2.com
 +.akabeesoft3.com
 +.akatsukiworks.com

@@ -1,0 +1,6 @@
+# CanalPlus / Core
+# Canonical subset; outbound selection belongs in node configuration
++.canalplus-bo.net
++.canalplus-cdn.net
++.canalplus.com
++.canalplus.pro

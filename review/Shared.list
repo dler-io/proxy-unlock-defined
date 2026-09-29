@@ -1,4 +1,5 @@
 # Shared
-# 服务域名规则；出口由节点的 region 配置
+# Generated from: parts/Shared/GoMPulse.list, parts/Shared/ThePlatform.list
+# Edit the canonical parts and run python3 scripts/build.py
 +.go-mpulse.net
 +.theplatform.com

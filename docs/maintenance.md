@@ -4,7 +4,15 @@
 
 清单按服务划分，出口不写进清单；VideoMarket、Molotov 已从多个地区段提取为各自唯一清单，具体使用 JP、JP_S 或 FR 等出口由节点显式配置
 
-初次导入保留清理后全部 559 个唯一模式，不把共享与归属不明的条目伪装成单一业务：`review/Shared.list` 有 2 个共享平台模式，`review/Unclassified.list` 有 25 个未分类模式；两份文件需要显式 `--include-review` 才能被生成器引用
+初次导入保留清理后全部 559 个唯一模式，不把共享与归属不明的条目伪装成单一业务：`review/Shared.list` 有 2 个共享平台模式，`review/Unclassified.list` 有 25 个未分类模式；两份文件及其子清单均需要显式 `--include-review` 才能被配置生成器引用
+
+8 个服务或合集已拆分为 19 份源子清单，分别维护于 `parts/<服务>/`；`catalog.json` 的 `parts` 声明完整清单由哪些源组成，`subsets` 声明需要额外组合的子集
+
+维护拆分服务时只修改源子清单，再运行 `python3 scripts/build.py`，提交源文件和生成结果；完整服务 URL 保持原样，`scripts/check.py` 会拒绝过期的生成文件和子清单间重复规则
+
+多出口不要求在节点内联维护域名：完整服务使用多个候选出口时，`region` 指向本机代理组；不同域名必须固定走不同出口时，为各个子清单分别设置 `url + region`，示例和完整路径见 [子清单目录](subsets.md)
+
+子清单名称表达域名分组，不规定出口地区；节点可保留现有服务键，仅替换其 URL，避免改变用户选区键
 
 GYAO 和 Funimation 共 3 个模式放入 `legacy/`，依据 [Yahoo 官方说明](https://support.yahoo-net.jp/SccGyao/s/) 和 [Crunchyroll 官方说明](https://help.crunchyroll.com/hc/en-us/articles/22843839604500-Funimation-End-of-Services)；其他迁入服务的状态为 `imported`，不作为现时可用性证明
 
@@ -23,7 +31,7 @@ GYAO 和 Funimation 共 3 个模式放入 `legacy/`，依据 [Yahoo 官方说明
 
 同一后缀下允许更具体的业务子域覆盖，但必须在 `policy/overlaps.json` 精确列出双方服务与模式并说明原因；相同模式不得用例外名单绕过重复归属校验
 
-更新规则前执行 `python3 scripts/check.py`，再运行测试；不在 CI 中自动根据一次 DNS 查询删规则，DNS 健康和实际业务播放应单独验证
+更新规则后执行 `python3 scripts/build.py`、`python3 scripts/check.py`，再运行测试；不在 CI 中自动根据一次 DNS 查询删规则，DNS 健康和实际业务播放应单独验证
 
 `policy/removed-domains.txt` 记录已确认删除的 42 个 NXDOMAIN 名称，阻止维护时误加回同名规则；它不阻止已存在的父域后缀覆盖，也不是运行时拒绝连接列表；确需恢复时应先复核并同步更新记录
 

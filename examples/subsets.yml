@@ -1,0 +1,10 @@
+# Merge into the existing proxy-unlock section; retain its rules/outbounds
+proxy-unlock:
+  rule-interval: 600
+  defined:
+    CanalPlus_Core:
+      url: "https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/parts/CanalPlus/Core.list"
+      region: "FR"
+    CanalPlus_MyCanal:
+      url: "https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/parts/CanalPlus/MyCanal.list"
+      region: "DE"

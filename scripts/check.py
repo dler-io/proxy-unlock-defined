@@ -76,13 +76,35 @@ def lint_rules(rules, approvals, removed):
     return errors
 
 
-def load_catalog(root=ROOT):
+def generated_text(service, parts, patterns):
+    return (f"# {service}\n# Generated from: {', '.join(parts)}\n"
+            "# Edit the canonical parts and run python3 scripts/build.py\n" +
+            "\n".join(patterns) + "\n")
+
+
+def catalog_material(root=ROOT):
     data = json.loads((root / "catalog.json").read_text(encoding="utf-8"))
     if data.get("schema_version") != 1 or set(data) != {"schema_version", "services"}:
         raise ValueError("unsupported catalog schema")
     if not isinstance(data["services"], list) or not data["services"]:
         raise ValueError("catalog must contain at least one service")
-    entries, seen, paths, rules = {}, set(), set(), {}
+    entries, seen, paths, rules, resources, generated = {}, set(), set(), {}, {}, {}
+
+    def add_resource(key, item, patterns):
+        if not ID.fullmatch(key) or key.casefold() in seen:
+            raise ValueError(f"case-insensitively duplicate ruleset: {key}")
+        seen.add(key.casefold())
+        resources[key] = {**item, "rules": patterns}
+
+    def canonical(path):
+        file = root / path
+        if any(p.is_symlink() for p in (file, *file.parents)) or not file.is_file():
+            raise ValueError(f"ruleset missing or symlinked: {path}")
+        values = read_lines(file)
+        if not values or values != sorted(set(values)):
+            raise ValueError(f"{path}: rules must be nonempty, sorted and unique")
+        return values
+
     for item in data["services"]:
         service, path, status = item["id"], item["path"], item["status"]
         if not ID.fullmatch(service) or service.casefold() in seen:
@@ -90,23 +112,71 @@ def load_catalog(root=ROOT):
         directory = {"imported": "services", "review": "review", "legacy": "legacy"}.get(status)
         if directory is None or path != f"{directory}/{service}.list" or path in paths:
             raise ValueError(f"invalid catalog path or status: {service}")
-        file = root / path
-        if file.is_symlink() or not file.is_file():
-            raise ValueError(f"ruleset missing or symlinked: {path}")
-        if not item.get("name") or set(item) - {"id", "name", "path", "status", "note"}:
+        if not item.get("name") or set(item) - {"id", "name", "path", "status", "note", "parts", "subsets"}:
             raise ValueError(f"invalid catalog fields: {service}")
-        entries[service], rules[service] = item, read_lines(file)
-        seen.add(service.casefold())
         paths.add(path)
-    actual = {str(p.relative_to(root)) for directory in ("services", "review", "legacy")
+        if "parts" not in item:
+            if "subsets" in item:
+                raise ValueError(f"{service}: subsets require canonical parts")
+            patterns = canonical(path)
+        else:
+            if not isinstance(item["parts"], list) or not item["parts"]:
+                raise ValueError(f"{service}: parts must be a nonempty list")
+            part_rules, part_paths = {}, {}
+            for part in item["parts"]:
+                key, part_path = part["id"], part["path"]
+                if (not ID.fullmatch(key) or part_path != f"parts/{service}/{key}.list"
+                        or part_path in paths or not part.get("name")
+                        or set(part) != {"id", "name", "path"}):
+                    raise ValueError(f"{service}: invalid part")
+                values = canonical(part_path)
+                part_rules[key], part_paths[key] = values, part_path
+                paths.add(part_path)
+                add_resource(f"{service}_{key}", {"path": part_path, "status": status,
+                             "name": part["name"], "parent": service}, values)
+            # Keep duplicates here so ownership validation rejects overlapping parts.
+            patterns = sorted(p for values in part_rules.values() for p in values)
+            generated[path] = generated_text(service, list(part_paths.values()), patterns)
+            for subset in item.get("subsets", []):
+                key, subset_path, selected = subset["id"], subset["path"], subset["parts"]
+                if (not ID.fullmatch(key) or subset_path != f"subsets/{service}/{key}.list"
+                        or subset_path in paths or not subset.get("name")
+                        or set(subset) != {"id", "name", "path", "parts"}
+                        or not isinstance(selected, list) or not selected
+                        or len(set(selected)) != len(selected)
+                        or any(p not in part_rules for p in selected)):
+                    raise ValueError(f"{service}: invalid subset")
+                values = sorted(p for part in selected for p in part_rules[part])
+                generated[subset_path] = generated_text(f"{service} / {key}",
+                                                       [part_paths[p] for p in selected], values)
+                paths.add(subset_path)
+                add_resource(f"{service}_{key}", {"path": subset_path, "status": status,
+                             "name": subset["name"], "parent": service}, values)
+        entries[service], rules[service] = item, patterns
+        add_resource(service, item, patterns)
+    actual = {str(p.relative_to(root)) for directory in ("services", "review", "legacy", "parts", "subsets")
               for p in (root / directory).rglob("*.list")}
-    if actual != paths:
+    if actual - paths or paths - actual - generated.keys():
         raise ValueError(f"uncataloged or missing files: {sorted(actual ^ paths)}")
+    for path in generated:
+        file = root / path
+        if any(p.is_symlink() for p in (file, *file.parents)):
+            raise ValueError(f"generated ruleset cannot be symlinked: {path}")
+    return entries, rules, resources, generated
+
+
+def load_catalog(root=ROOT, verify_generated=True):
+    entries, rules, _, generated = catalog_material(root)
+    if verify_generated:
+        for path, expected in generated.items():
+            file = root / path
+            if not file.is_file() or file.read_text(encoding="utf-8") != expected:
+                raise ValueError(f"{path}: stale generated list; run python3 scripts/build.py")
     return entries, rules
 
 
-def check(root=ROOT):
-    entries, rules = load_catalog(root)
+def check(root=ROOT, verify_generated=True):
+    entries, rules = load_catalog(root, verify_generated)
     approvals = json.loads((root / "policy/overlaps.json").read_text(encoding="utf-8"))
     removed = read_lines(root / "policy/removed-domains.txt")
     if removed != sorted(set(removed)) or any(not valid_rule(x) or x.startswith("+.") for x in removed):
@@ -123,7 +193,7 @@ def main():
     except (ValueError, KeyError, TypeError, OSError) as error:
         print(f"FAIL: {error}", file=sys.stderr)
         return 1
-    print(f"PASS: {len(entries)} lists, {sum(map(len, rules.values()))} domain patterns, "
+    print(f"PASS: {len(entries)} services, {sum(map(len, rules.values()))} domain patterns, "
           f"{len(approvals)} documented suffix overlaps, no duplicate ownership")
     return 0
 

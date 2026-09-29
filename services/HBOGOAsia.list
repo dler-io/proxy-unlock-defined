@@ -1,5 +1,6 @@
 # HBOGOAsia
-# 服务域名规则；出口由节点的 region 配置
+# Generated from: parts/HBOGOAsia/Base.list, parts/HBOGOAsia/Extended.list
+# Edit the canonical parts and run python3 scripts/build.py
 +.bcbolthboa-a.akamaihd.net
 +.dai3fd1oh325y.cloudfront.net
 +.hboasia1-i.akamaihd.net

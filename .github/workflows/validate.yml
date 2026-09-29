@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
-      - name: Validate catalog and ownership
+      - name: Validate catalog, generated lists and ownership
         run: python3 scripts/check.py
       - name: Check validator behavior
         run: python3 -m unittest discover -s tests -v
@@ -21,3 +21,5 @@ jobs:
         run: |
           python3 scripts/render.py --service Netflix=SG --service Disney=SG --service AI=AI > /tmp/proxy-unlock-example.yml
           diff -u examples/defined.yml /tmp/proxy-unlock-example.yml
+          python3 scripts/render.py --service CanalPlus_MyCanal=DE --service CanalPlus_Core=FR > /tmp/proxy-unlock-subsets.yml
+          diff -u examples/subsets.yml /tmp/proxy-unlock-subsets.yml

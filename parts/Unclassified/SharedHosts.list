@@ -1,0 +1,9 @@
+# Unclassified / SharedHosts
+# Canonical subset; outbound selection belongs in node configuration
++.api.recurly.com
++.dpm.demdex.net
++.pt.ispot.tv
++.session-replay.browser-intake-datadoghq.com
++.sessions.bugsnag.com
++.us-central1-adaptive-growth.cloudfunctions.net
++.us.edge.bamgrid.com

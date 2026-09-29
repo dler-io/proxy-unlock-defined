@@ -5,12 +5,14 @@ import json
 import re
 from urllib.parse import quote
 
-from check import ROOT, check
+from check import ROOT, catalog_material, check, ownership_keys
 
 
 def render(bindings, ref="main", include_review=False):
-    entries, _, _ = check(ROOT)
+    check(ROOT)
+    _, _, entries, _ = catalog_material(ROOT)
     selected = {}
+    owners = {}
     for binding in bindings:
         service, sep, region = binding.partition("=")
         if not sep or service not in entries:
@@ -21,6 +23,11 @@ def render(bindings, ref="main", include_review=False):
             raise ValueError(f"invalid outbound name: {region}")
         if entries[service]["status"] != "imported" and not include_review:
             raise ValueError(f"{service} needs explicit --include-review")
+        for rule in entries[service]["rules"]:
+            for key in ownership_keys(rule):
+                if key in owners:
+                    raise ValueError(f"overlapping selections: {owners[key]} and {service}: {key}")
+                owners[key] = service
         selected[service] = region
     if not selected or not ref or any(ord(c) < 32 for c in ref):
         raise ValueError("at least one service and a nonempty ref are required")

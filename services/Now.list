@@ -1,5 +1,6 @@
 # Now
-# 服务域名规则；出口由节点的 region 配置
+# Generated from: parts/Now/NowE.list, parts/Now/NowTV.list
+# Edit the canonical parts and run python3 scripts/build.py
 +.now-tv.com
 +.now.com
 +.nowe.com

@@ -1,9 +1,13 @@
 import sys
+import json
+import shutil
+import tempfile
 from pathlib import Path
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from check import lint_rules, valid_rule
+from check import ROOT, check, lint_rules, read_lines, valid_rule
+from build import build
 from render import render
 
 
@@ -45,6 +49,68 @@ class ValidationTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 render(bindings)
         self.assertIn("review/Shared.list", render(["Shared=CA"], include_review=True))
+
+    def fixture(self):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        root = Path(temp.name).resolve() / "rules"
+        shutil.copytree(ROOT, root, ignore=shutil.ignore_patterns(".git", "__pycache__"))
+        return root
+
+    def test_part_edit_updates_full_service_from_one_source(self):
+        root = self.fixture()
+        part = root / "parts/MyTVSuper/Core.list"
+        values = read_lines(part) + ["+.new.example.invalid"]
+        part.write_text("\n".join(sorted(values)) + "\n")
+        with self.assertRaisesRegex(ValueError, "stale generated"):
+            check(root)
+        build(root)
+        check(root)
+        self.assertIn("+.new.example.invalid", read_lines(root / "services/MyTVSuper.list"))
+        self.assertNotIn("+.new.example.invalid", read_lines(root / "parts/MyTVSuper/Analytics.list"))
+
+    def test_duplicate_between_parts_is_rejected(self):
+        root = self.fixture()
+        part = root / "parts/MyTVSuper/Analytics.list"
+        part.write_text("\n".join(sorted(read_lines(part) + ["+.tvb.com"])) + "\n")
+        with self.assertRaisesRegex(ValueError, "duplicate match"):
+            build(root)
+
+    def test_composed_subset_and_full_service_update_together(self):
+        root = self.fixture()
+        part = root / "parts/Unclassified/JapaneseSites.list"
+        values = sorted(read_lines(part) + ["+.new.example.invalid"])
+        part.write_text("\n".join(values) + "\n")
+        build(root)
+        check(root)
+        for path in ["subsets/Unclassified/Japanese.list", "review/Unclassified.list"]:
+            self.assertIn("+.new.example.invalid", read_lines(root / path))
+
+    def test_subset_rejects_unknown_parts(self):
+        root = self.fixture()
+        path = root / "catalog.json"
+        catalog = json.loads(path.read_text())
+        service = next(s for s in catalog["services"] if s["id"] == "Unclassified")
+        service["subsets"][0]["parts"] = ["Missing"]
+        path.write_text(json.dumps(catalog))
+        with self.assertRaisesRegex(ValueError, "invalid subset"):
+            build(root)
+
+    def test_render_disjoint_parts_and_reject_duplicate_selection(self):
+        output = render(["CanalPlus_MyCanal=DE", "CanalPlus_Core=FR"])
+        self.assertIn("parts/CanalPlus/MyCanal.list", output)
+        self.assertIn('region: "FR"', output)
+        with self.assertRaisesRegex(ValueError, "overlapping selections"):
+            render(["CanalPlus=FR", "CanalPlus_Core=FR"])
+        with self.assertRaisesRegex(ValueError, "overlapping selections"):
+            render(["Unclassified_Japanese=JP", "Unclassified_JapaneseSites=JP"], include_review=True)
+
+    def test_review_status_applies_to_parts_and_composed_subsets(self):
+        for ruleset in ["Shared_ThePlatform", "Unclassified_Japanese"]:
+            with self.assertRaisesRegex(ValueError, "include-review"):
+                render([ruleset + "=US"])
+        self.assertIn("subsets/Unclassified/Japanese.list",
+                      render(["Unclassified_Japanese=JP"], include_review=True))
 
 
 if __name__ == "__main__":

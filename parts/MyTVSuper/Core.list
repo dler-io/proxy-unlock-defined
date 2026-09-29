@@ -1,0 +1,4 @@
+# MyTVSuper / Core
+# Canonical subset; outbound selection belongs in node configuration
++.mytvsuper.com
++.tvb.com

@@ -114,7 +114,19 @@
       "id": "CanalPlus",
       "name": "CanalPlus",
       "path": "services/CanalPlus.list",
-      "status": "imported"
+      "status": "imported",
+      "parts": [
+        {
+          "id": "Core",
+          "name": "Core",
+          "path": "parts/CanalPlus/Core.list"
+        },
+        {
+          "id": "MyCanal",
+          "name": "MyCanal",
+          "path": "parts/CanalPlus/MyCanal.list"
+        }
+      ]
     },
     {
       "id": "CatchPlay",
@@ -163,7 +175,19 @@
       "name": "DAZN",
       "path": "services/DAZN.list",
       "status": "imported",
-      "note": "合并原 DAZN 和 JP/Other 中重复的两个 CloudFront 域名"
+      "note": "合并原 DAZN 和 JP/Other 中重复的两个 CloudFront 域名",
+      "parts": [
+        {
+          "id": "CloudFront",
+          "name": "CloudFront",
+          "path": "parts/DAZN/CloudFront.list"
+        },
+        {
+          "id": "Core",
+          "name": "Core",
+          "path": "parts/DAZN/Core.list"
+        }
+      ]
     },
     {
       "id": "DMM",
@@ -285,7 +309,19 @@
       "name": "HBO GO Asia",
       "path": "services/HBOGOAsia.list",
       "status": "imported",
-      "note": "历史域名集合，未验证当前业务可用性"
+      "note": "历史域名集合，未验证当前业务可用性",
+      "parts": [
+        {
+          "id": "Base",
+          "name": "Base",
+          "path": "parts/HBOGOAsia/Base.list"
+        },
+        {
+          "id": "Extended",
+          "name": "Extended",
+          "path": "parts/HBOGOAsia/Extended.list"
+        }
+      ]
     },
     {
       "id": "HBOMax",
@@ -431,7 +467,19 @@
       "id": "MyTVSuper",
       "name": "MyTVSuper",
       "path": "services/MyTVSuper.list",
-      "status": "imported"
+      "status": "imported",
+      "parts": [
+        {
+          "id": "Analytics",
+          "name": "Analytics",
+          "path": "parts/MyTVSuper/Analytics.list"
+        },
+        {
+          "id": "Core",
+          "name": "Core",
+          "path": "parts/MyTVSuper/Core.list"
+        }
+      ]
     },
     {
       "id": "MyVideo",
@@ -473,7 +521,19 @@
       "id": "Now",
       "name": "Now E / Now TV",
       "path": "services/Now.list",
-      "status": "imported"
+      "status": "imported",
+      "parts": [
+        {
+          "id": "NowE",
+          "name": "NowE",
+          "path": "parts/Now/NowE.list"
+        },
+        {
+          "id": "NowTV",
+          "name": "NowTV",
+          "path": "parts/Now/NowTV.list"
+        }
+      ]
     },
     {
       "id": "Ofiii",
@@ -554,7 +614,19 @@
       "name": "Shared",
       "path": "review/Shared.list",
       "status": "review",
-      "note": "原规则在多个业务间重复的共享平台域名，没有可通用的单一地区；不默认启用"
+      "note": "原规则在多个业务间重复的共享平台域名，没有可通用的单一地区；不默认启用",
+      "parts": [
+        {
+          "id": "GoMPulse",
+          "name": "GoMPulse",
+          "path": "parts/Shared/GoMPulse.list"
+        },
+        {
+          "id": "ThePlatform",
+          "name": "ThePlatform",
+          "path": "parts/Shared/ThePlatform.list"
+        }
+      ]
     },
     {
       "id": "Showtime",
@@ -663,7 +735,45 @@
       "name": "Unclassified",
       "path": "review/Unclassified.list",
       "status": "review",
-      "note": "原 Other/Reads 条目，暂未确认服务归属；不默认启用"
+      "note": "原 Other/Reads 条目，暂未确认服务归属；不默认启用",
+      "subsets": [
+        {
+          "id": "Japanese",
+          "name": "Japanese sites with Rakuten Magazine",
+          "path": "subsets/Unclassified/Japanese.list",
+          "parts": [
+            "JapaneseSites",
+            "RakutenMagazine"
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "id": "JapaneseSites",
+          "name": "JapaneseSites",
+          "path": "parts/Unclassified/JapaneseSites.list"
+        },
+        {
+          "id": "NStatic",
+          "name": "NStatic",
+          "path": "parts/Unclassified/NStatic.list"
+        },
+        {
+          "id": "RakutenMagazine",
+          "name": "RakutenMagazine",
+          "path": "parts/Unclassified/RakutenMagazine.list"
+        },
+        {
+          "id": "SharedHosts",
+          "name": "SharedHosts",
+          "path": "parts/Unclassified/SharedHosts.list"
+        },
+        {
+          "id": "Usercentrics",
+          "name": "Usercentrics",
+          "path": "parts/Unclassified/Usercentrics.list"
+        }
+      ]
     },
     {
       "id": "VideoMarket",
@@ -676,7 +786,19 @@
       "id": "ViuTV",
       "name": "Viu TV / Viu.TV",
       "path": "services/ViuTV.list",
-      "status": "imported"
+      "status": "imported",
+      "parts": [
+        {
+          "id": "Core",
+          "name": "Core",
+          "path": "parts/ViuTV/Core.list"
+        },
+        {
+          "id": "LiveCDN",
+          "name": "LiveCDN",
+          "path": "parts/ViuTV/LiveCDN.list"
+        }
+      ]
     },
     {
       "id": "WOWOW",

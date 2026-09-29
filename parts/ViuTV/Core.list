@@ -1,0 +1,3 @@
+# ViuTV / Core
+# Canonical subset; outbound selection belongs in node configuration
++.viu.tv

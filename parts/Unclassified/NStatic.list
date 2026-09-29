@@ -1,0 +1,3 @@
+# Unclassified / NStatic
+# Canonical subset; outbound selection belongs in node configuration
++.nstatic.org
