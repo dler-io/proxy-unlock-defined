@@ -33,7 +33,9 @@ GYAO 和 Funimation 共 3 个模式放入 `legacy/`，依据 [Yahoo 官方说明
 
 更新规则后执行 `python3 scripts/build.py`、`python3 scripts/check.py`，再运行测试；不在 CI 中自动根据一次 DNS 查询删规则，DNS 健康和实际业务播放应单独验证
 
-`policy/removed-domains.txt` 记录已确认删除的 42 个 NXDOMAIN 名称，阻止维护时误加回同名规则；它不阻止已存在的父域后缀覆盖，也不是运行时拒绝连接列表；确需恢复时应先复核并同步更新记录
+`policy/removed-domains.txt` 当前保留 41 个已确认删除且尚未恢复的 NXDOMAIN 名称，阻止维护时误加回同名规则；它不阻止已存在的父域后缀覆盖，也不是运行时拒绝连接列表；确需恢复时应先复核并同步更新记录
+
+2026-10-02 更新：AI 清单按 [SKK Apple Intelligence](https://github.com/SukkaW/Surge/blob/master/Source/non_ip/apple_intelligence.conf) 补齐 4 个 Siri / Apple Relay 精确域名，并按 [Cursor 登录域名说明](https://cursor.com/help/troubleshooting/sign-in-domains) 恢复 `accounts.spacex.ai`；该域名在 2026-09-29 清理时为 NXDOMAIN，本次通过 Google 和 Cloudflare DNS 复核后从删除记录中移除，AI 清单增至 121 条，全目录增至 564 条
 
 给服务增加条目时保持小写、逐行排序；同服务已经有 `+.example.com` 时不再重复写 `example.com`；明确主机使用精确匹配，服务专属域名按需使用 `+.`，避免扩大到整个共享 CDN
 

@@ -1,5 +1,8 @@
 # AI
 # 服务域名规则；出口由节点的 region 配置
+# Apple Intelligence / Siri: https://github.com/SukkaW/Surge/blob/master/Source/non_ip/apple_intelligence.conf
+# Cursor sign-in: https://cursor.com/help/troubleshooting/sign-in-domains
+# 2026-10-02 核实新增主机，使用精确匹配
 +.aisandbox-pa.googleapis.com
 +.aistudio.google.com
 +.anthropic.com
@@ -71,6 +74,7 @@
 +.windsurf.com
 +.zed.dev
 account.jetbrains.com
+accounts.spacex.ai
 accounts.x.ai
 ai.google.dev
 alkalicore-pa.clients6.google.com
@@ -82,6 +86,8 @@ api.jetbrains.cloud
 apis.google.com
 appcatalyst.pa.googleapis.com
 apple-relay.apple.com
+apple-relay.cloudflare.com
+apple-relay.fastly-edge.com
 apple-relay.mask.apple-dns.net
 auth.grok.com
 auth.grokipedia.com
@@ -95,9 +101,11 @@ cloudcode-pa.googleapis.com
 copilot-proxy.githubusercontent.com
 copilot-reports.github.com
 copilot-telemetry.githubusercontent.com
+cp4.cloudflare.com
 default.exp-tas.com
 forwarder.workos.com
 gateway.ai.cloudflare.com
+gspe1-ssl.ls.apple.com
 humb.apple.com
 images.workoscdn.com
 js.stripe.com

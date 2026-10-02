@@ -1,9 +1,9 @@
-# 2026-09-29 用户确认删除的 42 个 NXDOMAIN 名称
+# 已确认删除且尚未恢复的 41 个 NXDOMAIN 名称
+# 2026-09-29 初始删除 42 个；2026-10-02 经 Cursor 官方文档及 Google/Cloudflare DNS 复核，恢复 accounts.spacex.ai
 # 此清单只阻止重新引入相同规则项，不是运行时 DNS 拦截列表
 44wilhpljf.execute-api.ap-southeast-1.amazonaws.com
 4unal8ngvngjm07lj2q2umlc4.litix.io
 abema.adx.promo
-accounts.spacex.ai
 airspace-cdn.cbsviedo.com
 akamai.prod-live.h264.io
 au.edge.api.brightcove.com
