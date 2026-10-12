@@ -178,6 +178,20 @@
     "parent_service": "Google",
     "parent_rule": "+.googleapis.com",
     "child_service": "AI",
+    "child_rule": "daily-cloudcode-pa.googleapis.com",
+    "reason": "Antigravity 接口使用 AI 出口，精确主机优先于 Google 通用后缀"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "daily-cloudcode-pa.sandbox.googleapis.com",
+    "reason": "Antigravity 接口使用 AI 出口，精确主机优先于 Google 通用后缀"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
     "child_rule": "jules.googleapis.com",
     "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
   },

@@ -39,4 +39,8 @@ GYAO 和 Funimation 共 3 个模式放入 `legacy/`，依据 [Yahoo 官方说明
 
 给服务增加条目时保持小写、逐行排序；同服务已经有 `+.example.com` 时不再重复写 `example.com`；明确主机使用精确匹配，服务专属域名按需使用 `+.`，避免扩大到整个共享 CDN
 
+2026-10-12 更新：根据 Google 官方论坛的 [Antigravity 2.8.1 客户端日志](https://discuss.ai.google.dev/t/antigravity-2-8-1-macos-sign-in-never-starts-language-server-never-generates-an-oauth-url-no-browser-is-ever-opened/178878)和[较早版本登录日志](https://discuss.ai.google.dev/t/antigravity-blocco-login-e-modelli-su-rete-con-proxy-windows-11/110782)，为 AI 补充 `daily-cloudcode-pa.googleapis.com`、`daily-cloudcode-pa.sandbox.googleapis.com` 两个精确主机，并登记其对 Google 通用后缀的覆盖关系；两者经 Google、Cloudflare DNS 复核均有 A 记录，AI 清单增至 125 条，全目录增至 568 条；日志与 DNS 结果仅证明域名使用记录和解析状态，不代表当前所有版本均使用这些接口，也不代表账号资格或模型调用已验证
+
 新仓库已提供稳定清单地址，但创建仓库不会自动替换既有节点配置或热重载线上服务
+
+2026-10-12 香港可用范围补充：按 [Google Labs FAQ](https://labs.google/fx/faq) 为支持名单未列香港的 Project Genie 加入精确主机 `labs.google`；这是共享入口，同主机下其他 Labs 产品路径也会使用 AI 出口，不能按域名区分各产品路径。按 [Kiro FAQ](https://kiro.dev/faq/) 和[网络清单](https://kiro.dev/docs/privacy-and-security/firewalls/) 加入 `+.kiro.dev`、`q.eu-central-1.amazonaws.com`、`q.us-east-1.amazonaws.com`；Kiro 支持香港购买套餐，但模型仍遵循供应商地区要求，[Anthropic 支持名单](https://www.anthropic.com/supported-countries)未列香港，因此保留受限模型的 AI 分流，不表示 Kiro 全站均不支持香港。AWS 接口仅匹配上述两个精确主机；AI 清单增至 129 条，全目录增至 572 条，尚未实测账号登录和模型调用
