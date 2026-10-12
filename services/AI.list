@@ -6,6 +6,10 @@
 # Google Labs / Project Genie: https://labs.google/fx/faq
 # Kiro model regions: https://kiro.dev/faq/
 # Kiro endpoints: https://kiro.dev/docs/privacy-and-security/firewalls/
+# 2026-10-12 Hong Kong availability audit: ../docs/ai-hong-kong-audit.md
+# Cohere: https://cohere.com/saas-agreement
+# Chrome DevTools AI: https://developer.chrome.com/docs/devtools/ai-assistance/get-started
+# TRAE International: https://docs.trae.ai/ide/supported-countries-and-regions
 +.aisandbox-pa.googleapis.com
 +.aistudio.google.com
 +.anthropic.com
@@ -25,6 +29,8 @@
 +.clipdrop.co
 +.codeium.com
 +.codeiumdata.com
++.cohere.ai
++.cohere.com
 +.copilot.cloud.microsoft
 +.copilot.com
 +.copilot.microsoft.com
@@ -76,6 +82,8 @@
 +.proactivebackend-pa.googleapis.com
 +.robinfrontend-pa.googleapis.com
 +.sora.com
++.trae.ai
++.traeapi.us
 +.udify.app
 +.windsurf.com
 +.zed.dev
@@ -83,6 +91,7 @@ account.jetbrains.com
 accounts.spacex.ai
 accounts.x.ai
 ai.google.dev
+aida.googleapis.com
 alkalicore-pa.clients6.google.com
 alkalimakersuite-pa.clients6.google.com
 anysphere-binaries.s3.us-east-1.amazonaws.com
@@ -133,5 +142,7 @@ q.eu-central-1.amazonaws.com
 q.us-east-1.amazonaws.com
 rum.browser-intake-datadoghq.com
 setup.workos.com
+trae-api-sg.mchost.guru
+trae-api-us.mchost.guru
 waa-pa.clients6.google.com
 workos.imgix.net

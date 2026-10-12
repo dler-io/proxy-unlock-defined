@@ -44,3 +44,5 @@ GYAO 和 Funimation 共 3 个模式放入 `legacy/`，依据 [Yahoo 官方说明
 新仓库已提供稳定清单地址，但创建仓库不会自动替换既有节点配置或热重载线上服务
 
 2026-10-12 香港可用范围补充：按 [Google Labs FAQ](https://labs.google/fx/faq) 为支持名单未列香港的 Project Genie 加入精确主机 `labs.google`；这是共享入口，同主机下其他 Labs 产品路径也会使用 AI 出口，不能按域名区分各产品路径。按 [Kiro FAQ](https://kiro.dev/faq/) 和[网络清单](https://kiro.dev/docs/privacy-and-security/firewalls/) 加入 `+.kiro.dev`、`q.eu-central-1.amazonaws.com`、`q.us-east-1.amazonaws.com`；Kiro 支持香港购买套餐，但模型仍遵循供应商地区要求，[Anthropic 支持名单](https://www.anthropic.com/supported-countries)未列香港，因此保留受限模型的 AI 分流，不表示 Kiro 全站均不支持香港。AWS 接口仅匹配上述两个精确主机；AI 清单增至 129 条，全目录增至 572 条，尚未实测账号登录和模型调用
+
+2026-10-12 AI Suite 全面补漏：根据官方资料新增 Cohere、Chrome DevTools AI assistance、TRAE 国际版的 7 个模式，并同步四种客户端格式；AI 清单增至 136 条，全目录增至 579 条。地区依据、共享域名边界、已覆盖服务和未新增候选项见 [香港可用范围复核](ai-hong-kong-audit.md)
