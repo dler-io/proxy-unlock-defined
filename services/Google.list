@@ -1,5 +1,6 @@
 # Google
 # 服务域名规则；出口由节点的 region 配置
+# Gemini embedded YouTube thumbnail: https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/gemini-app-firewall-settings
 +.ggpht.com
 +.google.cn
 +.google.com
@@ -11,3 +12,4 @@
 +.redirector.googlevideo.com
 +.xn--ngstr-lra8j.com
 +.youtube.com
+i.ytimg.com
