@@ -192,8 +192,64 @@
     "parent_service": "Google",
     "parent_rule": "+.googleapis.com",
     "child_service": "AI",
+    "child_rule": "aiplatform.eu.rep.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "aiplatform.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "aiplatform.mtls.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "aiplatform.us.rep.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
     "child_rule": "appcatalyst.pa.googleapis.com",
     "reason": "保留原规则中更具体子域优先的语义，子域由 AI 独立配置出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "businessaicode.eu.rep.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "businessaicode.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "businessaicode.mtls.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "businessaicode.us.rep.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
   },
   {
     "parent_service": "Google",
@@ -222,6 +278,34 @@
     "child_service": "AI",
     "child_rule": "daily-cloudcode-pa.sandbox.googleapis.com",
     "reason": "Antigravity 接口使用 AI 出口，精确主机优先于 Google 通用后缀"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "discoveryengine.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "discoveryengine.mtls.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "eu-discoveryengine.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "eu-discoveryengine.mtls.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
   },
   {
     "parent_service": "Google",
@@ -264,6 +348,20 @@
     "child_service": "AI",
     "child_rule": "streetviewpixels-pa.googleapis.com",
     "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "us-discoveryengine.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "us-discoveryengine.mtls.googleapis.com",
+    "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
   },
   {
     "parent_service": "Google",

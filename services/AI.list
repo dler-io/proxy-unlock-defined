@@ -13,6 +13,7 @@
 # Gemini shared dependencies: https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/gemini-app-firewall-settings
 # Exact shared hosts also route non-Gemini requests through the AI egress
 # YouTube and advertising/analytics policies: ../docs/gemini-firewall-audit.md
+# Antigravity Enterprise (global / US / EU / mTLS): https://antigravity.google/docs/enterprise#network-allowlists-and-mtls-endpoints
 +.aisandbox-pa.googleapis.com
 +.aistudio.google.com
 +.anthropic.com
@@ -95,6 +96,10 @@ accounts.spacex.ai
 accounts.x.ai
 ai.google.dev
 aida.googleapis.com
+aiplatform.eu.rep.googleapis.com
+aiplatform.googleapis.com
+aiplatform.mtls.googleapis.com
+aiplatform.us.rep.googleapis.com
 alkalicore-pa.clients6.google.com
 alkalimakersuite-pa.clients6.google.com
 anysphere-binaries.s3.us-east-1.amazonaws.com
@@ -111,6 +116,10 @@ auth.grok.com
 auth.grokipedia.com
 auth.grokusercontent.com
 auth.x.ai
+businessaicode.eu.rep.googleapis.com
+businessaicode.googleapis.com
+businessaicode.mtls.googleapis.com
+businessaicode.us.rep.googleapis.com
 cdn.openaimerge.com
 cdn.workos.com
 challenges.cloudflare.com
@@ -125,10 +134,14 @@ csp.withgoogle.com
 daily-cloudcode-pa.googleapis.com
 daily-cloudcode-pa.sandbox.googleapis.com
 default.exp-tas.com
+discoveryengine.googleapis.com
+discoveryengine.mtls.googleapis.com
 encrypted-tbn0.gstatic.com
 encrypted-tbn1.gstatic.com
 encrypted-tbn2.gstatic.com
 encrypted-tbn3.gstatic.com
+eu-discoveryengine.googleapis.com
+eu-discoveryengine.mtls.googleapis.com
 fonts.googleapis.com
 fonts.gstatic.com
 forwarder.workos.com
@@ -166,5 +179,7 @@ ssl.gstatic.com
 streetviewpixels-pa.googleapis.com
 trae-api-sg.mchost.guru
 trae-api-us.mchost.guru
+us-discoveryengine.googleapis.com
+us-discoveryengine.mtls.googleapis.com
 waa-pa.clients6.google.com
 workos.imgix.net
