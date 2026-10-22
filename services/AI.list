@@ -14,6 +14,7 @@
 # Exact shared hosts also route non-Gemini requests through the AI egress
 # YouTube and advertising/analytics policies: ../docs/gemini-firewall-audit.md
 # Antigravity Enterprise (global / US / EU / mTLS): https://antigravity.google/docs/enterprise#network-allowlists-and-mtls-endpoints
+# Muse from Meta: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
 +.aisandbox-pa.googleapis.com
 +.aistudio.google.com
 +.anthropic.com
@@ -66,6 +67,7 @@
 +.makersuite.google.com
 +.meta.ai
 +.mistral.ai
++.muse.ai
 +.notebook.google
 +.notebook.google.com
 +.notebooklm.cloud.google.com
