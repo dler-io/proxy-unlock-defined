@@ -52,3 +52,5 @@ GYAO 和 Funimation 共 3 个模式放入 `legacy/`，依据 [Yahoo 官方说明
 2026-10-20 Antigravity 企业版：依据 [Google 官方网络清单](https://antigravity.google/docs/enterprise#network-allowlists-and-mtls-endpoints)，新增 `businessaicode`、`aiplatform`、`discoveryengine` 三组共 14 个精确主机，覆盖全球、美国、欧洲及官方列出的 mTLS 接口；加上原有 `cloudcode-pa.googleapis.com`，完整覆盖表中 15 个主机。AI 清单增至 169 条，全目录增至 613 条，62 处跨服务后缀重叠已登记。共享 API 主机上的其他 Google Cloud 业务也会使用 AI 出口；该清单不证明香港可用性或账号资格。官方要求这些端点 TCP 443 可达；企业使用 PSC、私有 DNS 或 VPC Service Controls 时仍需保留其私网路由，域名分流清单不代替企业网络配置。未验证企业账号登录、模型调用或线上节点刷新
 
 2026-10-22 Muse from Meta：根据 [Meta 官方公告](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)补充 `+.muse.ai`，同步四种客户端格式；`api.meta.ai`、`dev.meta.ai` 已由 `+.meta.ai` 覆盖，不重复新增精确条目。检查 AI 清单未发现重复模式或同清单内被父域覆盖的冗余项；AI 清单为 170 条，全目录为 614 条，跨服务分流覆盖关系保持不变。公告说明发布时面向美国推出，不等同于已验证当前账号资格或完整业务访问
+
+2026-10-23 xAI / Grok：按 [Cursor 官方登录域名说明](https://cursor.com/help/troubleshooting/sign-in-domains)，与 Rules 的 AI Suite 同步增加 `+.x.ai`、`+.grok.com`、`+.grokusercontent.com`、`+.grokipedia.com`；删除已被这些后缀覆盖的 `accounts.x.ai` 和 4 个 `auth.*` 精确条目，保留 `accounts.spacex.ai` 精确匹配。Grok 服务及共享登录使用 AI 出口；AI 清单为 169 条，全目录为 613 条，跨服务分流覆盖关系保持不变
