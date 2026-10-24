@@ -122,13 +122,6 @@
     "parent_service": "Google",
     "parent_rule": "+.google.com",
     "child_service": "AI",
-    "child_rule": "lh3.google.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.google.com",
-    "child_service": "AI",
     "child_rule": "ogs.google.com",
     "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
   },
@@ -311,13 +304,6 @@
     "parent_service": "Google",
     "parent_rule": "+.googleapis.com",
     "child_service": "AI",
-    "child_rule": "fonts.googleapis.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.googleapis.com",
-    "child_service": "AI",
     "child_rule": "jnn-pa.googleapis.com",
     "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
   },
@@ -362,69 +348,6 @@
     "child_service": "AI",
     "child_rule": "us-discoveryengine.mtls.googleapis.com",
     "reason": "Antigravity 企业版官方网络清单中的精确 API 主机由 AI 配置出口；同主机的其他 Google Cloud 请求也受影响，见 docs/maintenance.md 的 2026-10-20 记录"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.googleusercontent.com",
-    "child_service": "AI",
-    "child_rule": "lh3.googleusercontent.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.googleusercontent.com",
-    "child_service": "AI",
-    "child_rule": "lh5.googleusercontent.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.gstatic.com",
-    "child_service": "AI",
-    "child_rule": "encrypted-tbn0.gstatic.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.gstatic.com",
-    "child_service": "AI",
-    "child_rule": "encrypted-tbn1.gstatic.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.gstatic.com",
-    "child_service": "AI",
-    "child_rule": "encrypted-tbn2.gstatic.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.gstatic.com",
-    "child_service": "AI",
-    "child_rule": "encrypted-tbn3.gstatic.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.gstatic.com",
-    "child_service": "AI",
-    "child_rule": "fonts.gstatic.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.gstatic.com",
-    "child_service": "AI",
-    "child_rule": "maps.gstatic.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
-  },
-  {
-    "parent_service": "Google",
-    "parent_rule": "+.gstatic.com",
-    "child_service": "AI",
-    "child_rule": "ssl.gstatic.com",
-    "reason": "Gemini 官方防火墙清单中的精确共享主机由 AI 配置出口，同主机的非 Gemini 请求也受影响；见 docs/gemini-firewall-audit.md"
   },
   {
     "parent_service": "Shared",

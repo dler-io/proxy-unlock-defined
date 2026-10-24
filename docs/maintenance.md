@@ -54,3 +54,5 @@ GYAO 和 Funimation 共 3 个模式放入 `legacy/`，依据 [Yahoo 官方说明
 2026-10-22 Muse from Meta：根据 [Meta 官方公告](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)补充 `+.muse.ai`，同步四种客户端格式；`api.meta.ai`、`dev.meta.ai` 已由 `+.meta.ai` 覆盖，不重复新增精确条目。检查 AI 清单未发现重复模式或同清单内被父域覆盖的冗余项；AI 清单为 170 条，全目录为 614 条，跨服务分流覆盖关系保持不变。公告说明发布时面向美国推出，不等同于已验证当前账号资格或完整业务访问
 
 2026-10-23 xAI / Grok：按 [Cursor 官方登录域名说明](https://cursor.com/help/troubleshooting/sign-in-domains)，与 Rules 的 AI Suite 同步增加 `+.x.ai`、`+.grok.com`、`+.grokusercontent.com`、`+.grokipedia.com`；删除已被这些后缀覆盖的 `accounts.x.ai` 和 4 个 `auth.*` 精确条目，保留 `accounts.spacex.ai` 精确匹配。Grok 服务及共享登录使用 AI 出口；AI 清单为 169 条，全目录为 613 条，跨服务分流覆盖关系保持不变
+
+2026-10-24 共享静态资源清理：从 AI 清单和四种客户端格式移除 11 个 Google 共享字体、图片和静态 CDN 精确主机，恢复通用分流，名单见 [Gemini 防火墙清单核对](gemini-firewall-audit.md)；受限 AI 服务入口、模型、登录及企业接口保持不变，Google 清单、dler-server 和节点配置不变。同步删除 11 条对应的覆盖记录；AI 清单为 158 条，全目录为 602 条，保留 51 处跨服务后缀重叠。本次只验证规则完整性，未实测业务登录、模型调用或线上节点刷新

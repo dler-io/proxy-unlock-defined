@@ -12,7 +12,7 @@
 # TRAE International: https://docs.trae.ai/ide/supported-countries-and-regions
 # Gemini shared dependencies: https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/gemini-app-firewall-settings
 # Exact shared hosts also route non-Gemini requests through the AI egress
-# YouTube and advertising/analytics policies: ../docs/gemini-firewall-audit.md
+# Shared static assets, YouTube and advertising/analytics policies: ../docs/gemini-firewall-audit.md
 # Antigravity Enterprise (global / US / EU / mTLS): https://antigravity.google/docs/enterprise#network-allowlists-and-mtls-endpoints
 # Muse from Meta: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
 +.aisandbox-pa.googleapis.com
@@ -137,14 +137,8 @@ daily-cloudcode-pa.sandbox.googleapis.com
 default.exp-tas.com
 discoveryengine.googleapis.com
 discoveryengine.mtls.googleapis.com
-encrypted-tbn0.gstatic.com
-encrypted-tbn1.gstatic.com
-encrypted-tbn2.gstatic.com
-encrypted-tbn3.gstatic.com
 eu-discoveryengine.googleapis.com
 eu-discoveryengine.mtls.googleapis.com
-fonts.googleapis.com
-fonts.gstatic.com
 forwarder.workos.com
 gateway.ai.cloudflare.com
 gspe1-ssl.ls.apple.com
@@ -154,13 +148,9 @@ jnn-pa.googleapis.com
 js.stripe.com
 jules.googleapis.com
 labs.google
-lh3.google.com
-lh3.googleusercontent.com
-lh5.googleusercontent.com
 login.live.com
 login.microsoftonline.com
 maps.googleapis.com
-maps.gstatic.com
 o207216.ingest.sentry.io
 o33249.ingest.sentry.io
 oauth.account.jetbrains.com
@@ -176,7 +166,6 @@ q.eu-central-1.amazonaws.com
 q.us-east-1.amazonaws.com
 rum.browser-intake-datadoghq.com
 setup.workos.com
-ssl.gstatic.com
 streetviewpixels-pa.googleapis.com
 trae-api-sg.mchost.guru
 trae-api-us.mchost.guru
