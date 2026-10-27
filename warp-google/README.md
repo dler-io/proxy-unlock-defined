@@ -14,8 +14,10 @@ https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/warp-google/
 
 - Google 搜索国家域名：按 [Google 官方 supported_domains](https://www.google.com/supported_domains) 的 2026-10-28 快照列出 187 个域名，使用明确的后缀规则，不使用 `google.*` 标签通配
 - YouTube 入口、短链接、无 Cookie 播放器和 Kids；`googlevideo.com` 默认只列出精确主机 `redirector.googlevideo.com`
-- Gemini 网页、API 和 AI Studio：`gemini.google.com`、`aistudio.google.com` 由 `+.google.com` 覆盖，API 由 `+.googleapis.com` 覆盖；另保留精确入口 `gemini.google`
+- Gemini 网页、API 和 AI Studio：`gemini.google.com`、`aistudio.google.com` 由 `+.google.com` 覆盖，API 由 `+.googleapis.com` 覆盖；另用 `+.gemini.google` 覆盖根域、分享和企业版认证子域
 - 共享服务域 `googleapis.com`、`googleusercontent.com`、`ggpht.com`：Google 的 [Gemini 主机清单](https://knowledge.workspace.google.com/admin/security/firewall-and-proxy-settings#gemini-hosts) 列有这些域下的 API、图片或内容主机，现阶段保留后缀覆盖以免遗漏动态主机；这也会覆盖使用同域的其他 Google 请求
+
+已确认的 Gemini 子域包括 [share.gemini.google](https://share.gemini.google/)（Google 分享短链）、[business.gemini.google](https://support.google.com/g/answer/16938246?hl=en)（企业版入口）及其登录跳转目标 `auth.business.gemini.google`；不能只精确匹配根域
 
 不纳入 `gmail.com`、`android.com`、`googleapis.cn`、`xn--ngstr-lra8j.com`，也不接管整个 `.google`、`.goog`、`.youtube` 顶级域；`gstatic.com`、`i.ytimg.com`、`gvt1.com` 及默认视频 CDN 保持原有路由，其中 `gstatic.com` 涵盖常用联网探测与测速主机。Google 官方搜索列表中的 `google.cn` 仍保留
 

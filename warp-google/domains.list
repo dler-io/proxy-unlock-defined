@@ -1,6 +1,7 @@
 # warp-google: Google Search, YouTube and Gemini routing
 # Google search domains: https://www.google.com/supported_domains
 # Search domain snapshot: 2026-10-28; service scope: see README.md
++.gemini.google
 +.ggpht.com
 +.google.ad
 +.google.ae
@@ -196,5 +197,4 @@
 +.youtube.com
 +.youtubekids.com
 +.yt.be
-gemini.google
 redirector.googlevideo.com
