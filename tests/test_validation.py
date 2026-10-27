@@ -63,6 +63,16 @@ class ValidationTests(unittest.TestCase):
         shutil.copytree(ROOT, root, ignore=shutil.ignore_patterns(".git", "__pycache__"))
         return root
 
+    def test_warp_google_is_validated_without_service_ownership_conflicts(self):
+        root = self.fixture()
+        path = root / "warp-google/domains.list"
+        path.write_text("+.google.com\n")
+        entries, _, _ = check(root)
+        self.assertNotIn("warp-google", entries)
+        path.write_text("+.google.*\n")
+        with self.assertRaisesRegex(ValueError, "warp-google: invalid domain pattern"):
+            check(root)
+
     def test_part_edit_updates_full_service_from_one_source(self):
         root = self.fixture()
         part = root / "parts/MyTVSuper/Core.list"

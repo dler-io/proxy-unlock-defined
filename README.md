@@ -13,6 +13,7 @@
 - `legacy/`：已知停运的 GYAO、Funimation 历史条目，默认不启用
 - `parts/`：需要分开选区或仅加载部分范围的服务子清单，域名在此维护
 - `subsets/`：由多个子清单自动组合的清单，不手工编辑
+- `warp-google/`：供 oix-server 选择 WARP 出口的[独立清单](warp-google/README.md)，不纳入服务目录
 - `catalog.json`：稳定的服务 ID、文件路径和状态
 - `policy/`：已删除条目记录，以及允许的更具体子域覆盖
 - `scripts/`：离线校验和配置片段生成器，使用 Python 3.10+ 标准库
