@@ -31,8 +31,8 @@ def render(bindings, ref="main", include_review=False):
         selected[service] = region
     if not selected or not ref or any(ord(c) < 32 for c in ref):
         raise ValueError("at least one service and a nonempty ref are required")
-    lines = ["# Merge into the existing proxy-unlock section; retain its rules/outbounds",
-             "proxy-unlock:", "  rule-interval: 600", "  defined:"]
+    lines = ["# Merge rules into the existing proxy-unlock section; retain its nodes/groups",
+             "proxy-unlock:", "  rule-interval: 600", "  rules:"]
     for service, region in sorted(selected.items()):
         url = ("https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/" +
                quote(ref, safe="") + "/" + entries[service]["path"])

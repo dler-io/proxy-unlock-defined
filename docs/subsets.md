@@ -33,7 +33,7 @@
 
 ```yaml
 proxy-unlock:
-  defined:
+  rules:
     CanalPlus_DE:
       url: https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/parts/CanalPlus/MyCanal.list
       region: DE

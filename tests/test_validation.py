@@ -51,6 +51,8 @@ class ValidationTests(unittest.TestCase):
         output = render(["Netflix=SG", "AI=AI"], ref="a" * 40)
         self.assertIn("/" + "a" * 40 + "/services/Netflix.list", output)
         self.assertIn('region: "SG"', output)
+        self.assertIn("\n  rules:\n", output)
+        self.assertNotIn("\n  defined:\n", output)
         for bindings in [["Missing=SG"], ["Netflix=SG", "Netflix=JP"], ["Netflix="], ["Shared=CA"]]:
             with self.assertRaises(ValueError):
                 render(bindings)

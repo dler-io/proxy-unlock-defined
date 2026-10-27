@@ -1,6 +1,6 @@
 # proxy-unlock-defined
 
-按服务统一维护 proxy-unlock 域名规则，节点通过 `defined.<服务>.url` 引用清单，通过 `region` 选择本机出口
+按服务统一维护 proxy-unlock 域名规则，节点通过 `rules.<服务>.url` 引用清单，通过 `region` 选择本机出口
 
 清单源于 2026-09-29 清理后的规则，当前维护 114 个服务或合集、590 个唯一域名模式，其中 110 个普通服务、2 个待核查合集、2 个已知停运服务历史合集；导入状态不代表已验证当前解锁或播放能力
 
@@ -29,12 +29,12 @@ api.example.com
 
 仓库统一使用精确域名与 `+.` 后缀模式；不接受 IP 地址、CIDR、USER-AGENT、DOMAIN-KEYWORD 等规则类型
 
-接入示例：
+接入示例（当前 oix-server 配置格式）：
 
 ```yaml
 proxy-unlock:
   rule-interval: 600
-  defined:
+  rules:
     Netflix:
       url: https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/services/Netflix.list
       region: SG
@@ -46,7 +46,7 @@ proxy-unlock:
       region: AI
 ```
 
-这是一段配置片段，合并到现有 `proxy-unlock` 节点下，保留该节点已有的 `rules` 出口定义；`region: SG` 和 `region: AI` 分别要求本机有同名 `match`，不存在时可能回退直连
+这是一段配置片段，合并到现有 `proxy-unlock` 节点下，将生成的 `rules.<服务>` 合并到现有服务规则，保留该节点的 `nodes` / `groups` 出口定义；`region: SG` 和 `region: AI` 分别要求本机有同名节点或策略组，不存在时可能回退直连
 
 也可生成配置片段：
 

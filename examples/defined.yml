@@ -1,7 +1,7 @@
-# Merge into the existing proxy-unlock section; retain its rules/outbounds
+# Merge rules into the existing proxy-unlock section; retain its nodes/groups
 proxy-unlock:
   rule-interval: 600
-  defined:
+  rules:
     AI:
       url: "https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/services/AI.list"
       region: "AI"
