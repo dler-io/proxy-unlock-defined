@@ -56,3 +56,5 @@ GYAO 和 Funimation 共 3 个模式放入 `legacy/`，依据 [Yahoo 官方说明
 2026-10-23 xAI / Grok：按 [Cursor 官方登录域名说明](https://cursor.com/help/troubleshooting/sign-in-domains)，与 Rules 的 AI Suite 同步增加 `+.x.ai`、`+.grok.com`、`+.grokusercontent.com`、`+.grokipedia.com`；删除已被这些后缀覆盖的 `accounts.x.ai` 和 4 个 `auth.*` 精确条目，保留 `accounts.spacex.ai` 精确匹配。Grok 服务及共享登录使用 AI 出口；AI 清单为 169 条，全目录为 613 条，跨服务分流覆盖关系保持不变
 
 2026-10-24 共享静态资源清理：从 AI 清单和四种客户端格式移除 11 个 Google 共享字体、图片和静态 CDN 精确主机，恢复通用分流，名单见 [Gemini 防火墙清单核对](gemini-firewall-audit.md)；受限 AI 服务入口、模型、登录及企业接口保持不变，Google 清单、dler-server 和节点配置不变。同步删除 11 条对应的覆盖记录；AI 清单为 158 条，全目录为 602 条，保留 51 处跨服务后缀重叠。本次只验证规则完整性，未实测业务登录、模型调用或线上节点刷新
+
+2026-10-28 Gemini 网页 / Chrome 分流：将 13 条网页入口及共享主机的 AI 规则注释保留，企业版改用更具体的 `+.business.gemini.google`；有效 AI 条目为 146 条，全目录 590 个域名模式、40 处登记重叠。WARP 只补入 `csp.withgoogle.com` 精确规则；AI Studio、Gemini API、Antigravity、Notebook 等现有规则保持，unlock 仍优先于 WARP。变更依据和共享主机边界见 [Gemini 防火墙清单核对](gemini-firewall-audit.md)

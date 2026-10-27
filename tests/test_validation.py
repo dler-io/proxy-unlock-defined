@@ -73,6 +73,40 @@ class ValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "warp-google: invalid domain pattern"):
             check(root)
 
+    def test_gemini_web_uses_warp_while_restricted_services_keep_ai(self):
+        ai = read_lines(ROOT / "services/AI.list")
+        warp = read_lines(ROOT / "warp-google/domains.list")
+
+        def matches(host, patterns):
+            return any(rule == host or rule.startswith("+.") and
+                       (host == rule[2:] or host.endswith("." + rule[2:]))
+                       for rule in patterns)
+
+        for host in ("bard.google.com", "gemini.google.com", "gemini.google",
+                     "share.gemini.google", "geminiweb-pa.googleapis.com",
+                     "apis.google.com", "play.google.com", "ogs.google.com",
+                     "jnn-pa.googleapis.com", "waa-pa.clients6.google.com",
+                     "maps.googleapis.com", "optimizationguide-pa.googleapis.com",
+                     "streetviewpixels-pa.googleapis.com", "content-autofill.googleapis.com",
+                     "csp.withgoogle.com"):
+            with self.subTest(web=host):
+                self.assertFalse(matches(host, ai))
+                self.assertTrue(matches(host, warp))
+        for host in ("aistudio.google.com", "generativelanguage.googleapis.com",
+                     "antigravity.google", "notebooklm.google.com", "opal.google",
+                     "labs.google", "aida.googleapis.com", "business.gemini.google",
+                     "auth.business.gemini.google", "geller-pa.googleapis.com",
+                     "proactivebackend-pa.googleapis.com", "robinfrontend-pa.googleapis.com"):
+            with self.subTest(restricted=host):
+                self.assertTrue(matches(host, ai))
+        for host in ("gmail.com", "mail.gmail.com", "android.com", "unrelated.google",
+                     "unrelated.goog", "unrelated.withgoogle.com", "www.gstatic.com"):
+            with self.subTest(unrelated=host):
+                self.assertFalse(matches(host, warp))
+        text = (ROOT / "services/AI.list").read_text()
+        self.assertIn("# +.gemini.google.com\n", text)
+        self.assertIn("# csp.withgoogle.com\n", text)
+
     def test_part_edit_updates_full_service_from_one_source(self):
         root = self.fixture()
         part = root / "parts/MyTVSuper/Core.list"
