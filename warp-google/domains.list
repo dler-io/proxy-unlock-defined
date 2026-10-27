@@ -1,6 +1,7 @@
 # warp-google: Google Search, YouTube and Gemini routing
 # Google search domains: https://www.google.com/supported_domains
-# Search domain snapshot: 2026-10-28; service scope: see README.md
+# Search domain snapshot: 2026-10-28; aliases and Gemini dependencies: see README.md
++.gemini.app.google
 +.gemini.google
 +.ggpht.com
 +.google.ad
@@ -35,7 +36,9 @@
 +.google.co.cr
 +.google.co.id
 +.google.co.il
++.google.co.im
 +.google.co.in
++.google.co.je
 +.google.co.jp
 +.google.co.ke
 +.google.co.kr
@@ -56,6 +59,7 @@
 +.google.com
 +.google.com.af
 +.google.com.ag
++.google.com.ai
 +.google.com.ar
 +.google.com.au
 +.google.com.bd
@@ -64,6 +68,7 @@
 +.google.com.bo
 +.google.com.br
 +.google.com.bz
++.google.com.cn
 +.google.com.co
 +.google.com.cu
 +.google.com.cy
@@ -104,6 +109,7 @@
 +.google.com.sl
 +.google.com.sv
 +.google.com.tj
++.google.com.tn
 +.google.com.tr
 +.google.com.tw
 +.google.com.ua
@@ -127,8 +133,10 @@
 +.google.gg
 +.google.gl
 +.google.gm
++.google.gp
 +.google.gr
 +.google.gy
++.google.hk
 +.google.hn
 +.google.hr
 +.google.ht
@@ -155,10 +163,12 @@
 +.google.mk
 +.google.ml
 +.google.mn
++.google.ms
 +.google.mu
 +.google.mv
 +.google.mw
 +.google.ne
++.google.ng
 +.google.nl
 +.google.no
 +.google.nr
@@ -183,18 +193,27 @@
 +.google.st
 +.google.td
 +.google.tg
++.google.tk
 +.google.tl
 +.google.tm
 +.google.tn
 +.google.to
 +.google.tt
++.google.vg
 +.google.vu
 +.google.ws
 +.googleapis.com
 +.googleusercontent.com
++.opal.google
++.scf.usercontent.goog
 +.youtu.be
 +.youtube-nocookie.com
 +.youtube.com
 +.youtubekids.com
 +.yt.be
+ai.google.dev
+auth.cloud.google
+notebooklm.cloud.google
+payments.cloud.google
 redirector.googlevideo.com
+vertexaisearch.cloud.google
