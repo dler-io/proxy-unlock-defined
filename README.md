@@ -2,7 +2,7 @@
 
 按服务统一维护 proxy-unlock 域名规则，节点通过 `rules.<服务>.url` 引用清单，通过 `region` 选择本机出口
 
-清单源于 2026-09-29 清理后的规则，当前维护 114 个服务或合集、594 个唯一域名模式，其中 110 个普通服务、2 个待核查合集、2 个已知停运服务历史合集；导入状态不代表已验证当前解锁或播放能力
+清单源于 2026-09-29 清理后的规则，当前维护 114 个服务或合集、591 个唯一域名模式，其中 110 个普通服务、2 个待核查合集、2 个已知停运服务历史合集；导入状态不代表已验证当前解锁或播放能力
 
 [完整服务目录](docs/catalog.md) · [维护与迁移说明](docs/maintenance.md)
 
@@ -83,6 +83,7 @@ python3 -m unittest discover -s tests -v
 - `theplatform.com`、`go-mpulse.net` 从原重复业务中抽出放入 `review/Shared.list`，不自动选择地区
 - AI 保留为现有业务合集，其中共享登录、验证码、支付和 API 主机仍会影响同主机上的其他请求
 - Gemini 网页、Chrome 内置 Gemini 及相关共享主机的 13 条 AI 规则已注释保留，由 `warp-google` 接管；企业版保留更具体的 `+.business.gemini.google`，AI Studio、Gemini API、Antigravity 等维持原 AI 出口，见 [Gemini 分流说明](docs/gemini-firewall-audit.md)
+- Google 与 WARP 的 Gemini 入口均覆盖 `+.gemini.google`、`+.gemini.app.google`；共享图片、内容托管及 CSP 依赖恢复通用分流，不要求与 Gemini 使用同一出口；企业版仍由 AI 更具体的后缀优先处理
 - 有效的 unlock 出口继续优先于 `warp-google`；如果节点另行绑定了 Google 通用解锁或保留旧的内联 AI 规则，仍会优先走该出口。新清单生效需要远端刷新，已建立连接需重新连接
 
 服务规则中没有服务器地址、端口、账号、密码或节点配置；出口和用户选区由部署端维护

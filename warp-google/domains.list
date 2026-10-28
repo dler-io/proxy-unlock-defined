@@ -3,7 +3,6 @@
 # Search domain snapshot: 2026-10-28; aliases and Gemini dependencies: see README.md
 +.gemini.app.google
 +.gemini.google
-+.ggpht.com
 +.google.ad
 +.google.ae
 +.google.al
@@ -203,7 +202,6 @@
 +.google.vu
 +.google.ws
 +.googleapis.com
-+.googleusercontent.com
 +.opal.google
 +.scf.usercontent.goog
 +.youtu.be
@@ -213,7 +211,6 @@
 +.yt.be
 ai.google.dev
 auth.cloud.google
-csp.withgoogle.com
 notebooklm.cloud.google
 payments.cloud.google
 redirector.googlevideo.com

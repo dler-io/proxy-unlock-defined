@@ -51,7 +51,7 @@
 | `FujiTV` | Fuji TV | imported | [services/FujiTV.list](../services/FujiTV.list) | 2 |
 | `Funimation` | Funimation (US/EU) | legacy | [legacy/Funimation.list](../legacy/Funimation.list) | 2 |
 | `GYAO` | GYAO! | legacy | [legacy/GYAO.list](../legacy/GYAO.list) | 1 |
-| `Google` | Google | imported | [services/Google.list](../services/Google.list) | 12 |
+| `Google` | Google | imported | [services/Google.list](../services/Google.list) | 9 |
 | `HBOGOAsia` | HBO GO Asia | imported | [services/HBOGOAsia.list](../services/HBOGOAsia.list) | 17 |
 | `HBOMax` | HBO Max (HK/TW/SG/US/EU) | imported | [services/HBOMax.list](../services/HBOMax.list) | 7 |
 | `HKDTMB` | HKDTMB | imported | [services/HKDTMB.list](../services/HKDTMB.list) | 1 |

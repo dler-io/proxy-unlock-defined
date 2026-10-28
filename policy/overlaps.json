@@ -29,6 +29,13 @@
   },
   {
     "parent_service": "Google",
+    "parent_rule": "+.gemini.google",
+    "child_service": "AI",
+    "child_rule": "+.business.gemini.google",
+    "reason": "Gemini 普通网页与分享入口使用 Google 出口，企业版及认证子域继续由 AI 更具体的后缀优先处理"
+  },
+  {
+    "parent_service": "Google",
     "parent_rule": "+.google.com",
     "child_service": "AI",
     "child_rule": "+.aistudio.google.com",

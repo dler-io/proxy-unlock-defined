@@ -21,14 +21,14 @@ https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/warp-google/
 - Canvas / AI Studio 预览：保留 `+.scf.usercontent.goog`，用途和动态子域结构见 [Google SafeContentFrame 说明](https://bughunters.google.com/blog/beyond-sandbox-domains-rendering-untrusted-web-content-with-safecontentframe)
 - Gemini 开发入口保留精确 `ai.google.dev`；Gemini Enterprise 保留官方网络清单中的 `auth.cloud.google`、`vertexaisearch.cloud.google`、`notebooklm.cloud.google`、`payments.cloud.google`，见[官方接入文档](https://docs.cloud.google.com/gemini/enterprise/docs/private-ui-access)
 - Gemini 的实验 Gems 编辑器保留 `+.opal.google`，见[官方集成说明](https://blog.google/innovation-and-ai/models-and-research/google-labs/mini-apps-opal-gemini-app-experiment/)；[官方 FAQ](https://developers.google.com/opal/faq)说明该实验计划于 2026-11-17 关闭，本清单不扩展到其他 Labs 产品
-- Gemini 共享依赖 `csp.withgoogle.com` 使用精确主机规则，依据 [Google 官方 Gemini 防火墙清单](https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/gemini-app-firewall-settings)；不扩大到整个 `withgoogle.com`
-- 共享服务域 `googleapis.com`、`googleusercontent.com`、`ggpht.com`：Google 的 [Gemini 主机清单](https://knowledge.workspace.google.com/admin/security/firewall-and-proxy-settings#gemini-hosts) 列有这些域下的 API、图片或内容主机，现阶段保留后缀覆盖以免遗漏动态主机；这也会覆盖使用同域的其他 Google 请求
+- 共享 API 域 `googleapis.com` 保留后缀覆盖，Google 的 [Gemini 主机清单](https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/gemini-app-firewall-settings) 列有这些域下的接口；同域下的其他 Google API 请求也会受影响
+- 2026-10-28 与 Google 服务清单统一共享依赖的分流范围，移除 `+.googleusercontent.com`、`+.ggpht.com` 和精确主机 `csp.withgoogle.com`，共享图片、内容托管和 CSP 依赖沿用通用分流；防火墙放行清单不等于需要指定同一解锁出口的清单
 
 已确认的 Gemini 子域包括 [share.gemini.google](https://share.gemini.google/)（Google 分享短链）、[business.gemini.google](https://support.google.com/g/answer/16938246?hl=en)（企业版入口）及其登录跳转目标 `auth.business.gemini.google`；WARP 清单保留该后缀覆盖；企业版子域仍由 AI 清单中更具体的规则优先处理
 
 11 个搜索别名为 `google.co.im`、`google.co.je`、`google.com.ai`、`google.com.cn`、`google.com.tn`、`google.gp`、`google.hk`、`google.ms`、`google.ng`、`google.tk`、`google.vg`，来源为 `https://gemini.google.com/` 响应的 `script-src` CSP。2026-10-28 实查其中 10 个返回搜索界面或跳转，`google.com.cn` 仅确认官方 CSP 引用，本次未成功完成 HTTPS 请求，不据此宣称可用
 
-不纳入 `gmail.com`、`android.com`、`googleapis.cn`、`xn--ngstr-lra8j.com`，也不接管整个 `.google`、`.goog`、`.youtube` 顶级域；`gstatic.com`、`i.ytimg.com`、`gvt1.com` 及默认视频 CDN 保持原有路由，其中 `gstatic.com` 涵盖常用联网探测与测速主机。Google 官方搜索列表中的 `google.cn` 仍保留
+不纳入 `gmail.com`、`android.com`、`googleapis.cn`、`xn--ngstr-lra8j.com`，也不接管整个 `.google`、`.goog`、`.youtube` 顶级域；`gstatic.com`、`i.ytimg.com`、`ggpht.com`、`googleusercontent.com`、`pki.goog`、`csp.withgoogle.com`、`gvt1.com` 及默认视频 CDN 保持原有路由，其中 `gstatic.com` 涵盖常用联网探测与测速主机。Google 官方搜索列表中的 `google.cn` 仍保留
 
 移除 `gmail.com` 不代表 Gmail 所有请求都不再经 WARP，`mail.google.com` 等共享父域下的请求仍会匹配。清单支持 Google 与 Gemini 域名分流，不保证产品可用地区、账号资格或订阅权益；Google/YouTube 出口检查通过也不等于 Gemini 可用
 

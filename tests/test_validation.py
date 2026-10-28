@@ -89,8 +89,7 @@ class ValidationTests(unittest.TestCase):
                      "apis.google.com", "play.google.com", "ogs.google.com",
                      "jnn-pa.googleapis.com", "waa-pa.clients6.google.com",
                      "maps.googleapis.com", "optimizationguide-pa.googleapis.com",
-                     "streetviewpixels-pa.googleapis.com", "content-autofill.googleapis.com",
-                     "csp.withgoogle.com"):
+                     "streetviewpixels-pa.googleapis.com", "content-autofill.googleapis.com"):
             with self.subTest(web=host):
                 self.assertFalse(matches(host, ai))
                 self.assertTrue(matches(host, warp))
@@ -102,7 +101,9 @@ class ValidationTests(unittest.TestCase):
             with self.subTest(restricted=host):
                 self.assertTrue(matches(host, ai))
         for host in ("gmail.com", "mail.gmail.com", "android.com", "unrelated.google",
-                     "unrelated.goog", "unrelated.withgoogle.com", "www.gstatic.com"):
+                     "unrelated.goog", "unrelated.withgoogle.com", "www.gstatic.com",
+                     "csp.withgoogle.com", "i.ytimg.com", "yt3.ggpht.com",
+                     "lh3.googleusercontent.com", "pki.goog"):
             with self.subTest(unrelated=host):
                 self.assertFalse(matches(host, warp))
         text = (ROOT / "services/AI.list").read_text()
