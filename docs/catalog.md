@@ -37,7 +37,7 @@
 | `Dcard` | Dcard | imported | [services/Dcard.list](../services/Dcard.list) | 1 |
 | `DirecTV` | DirecTV | imported | [services/DirecTV.list](../services/DirecTV.list) | 2 |
 | `DiscoveryPlus` | Discovery+ (US/EU) | imported | [services/DiscoveryPlus.list](../services/DiscoveryPlus.list) | 7 |
-| `Disney` | Disney | imported | [services/Disney.list](../services/Disney.list) | 8 |
+| `Disney` | Disney | imported | [services/Disney.list](../services/Disney.list) | 12 |
 | `Docplay` | Docplay | imported | [services/Docplay.list](../services/Docplay.list) | 5 |
 | `ESPN` | ESPN+ | imported | [services/ESPN.list](../services/ESPN.list) | 10 |
 | `EncoreTVB` | encoreTVB | imported | [services/EncoreTVB.list](../services/EncoreTVB.list) | 3 |

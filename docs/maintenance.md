@@ -58,3 +58,5 @@ GYAO 和 Funimation 共 3 个模式放入 `legacy/`，依据 [Yahoo 官方说明
 2026-10-24 共享静态资源清理：从 AI 清单和四种客户端格式移除 11 个 Google 共享字体、图片和静态 CDN 精确主机，恢复通用分流，名单见 [Gemini 防火墙清单核对](gemini-firewall-audit.md)；受限 AI 服务入口、模型、登录及企业接口保持不变，Google 清单、dler-server 和节点配置不变。同步删除 11 条对应的覆盖记录；AI 清单为 158 条，全目录为 602 条，保留 51 处跨服务后缀重叠。本次只验证规则完整性，未实测业务登录、模型调用或线上节点刷新
 
 2026-10-28 Gemini 网页 / Chrome 分流：将 13 条网页入口及共享主机的 AI 规则注释保留，企业版改用更具体的 `+.business.gemini.google`；有效 AI 条目为 146 条，全目录 590 个域名模式、40 处登记重叠。WARP 只补入 `csp.withgoogle.com` 精确规则；AI Studio、Gemini API、Antigravity、Notebook 等现有规则保持，unlock 仍优先于 WARP。变更依据和共享主机边界见 [Gemini 防火墙清单核对](gemini-firewall-audit.md)
+
+2026-10-28 Disney 登录与播放补漏：根据 [Disney+ 登录页](https://www.disneyplus.com/identity/login)与[官方 Web SDK 配置](https://client-sdk-configs.bamgrid.com/bam-sdk/v7.0/disney-svod-3d9324fc/browser/v35.6/windows/chrome/prod.json)，为 Disney 补充 `authorization.go.com`、`login.disney.com`、`disney.content.edge.bamgrid.com`、`disney.playback.edge.bamgrid.com` 四个精确主机，分别覆盖登录授权、登录 API、内容及播放/DRM 接口。两个登录主机属于共享身份服务，同主机上的其他 Disney 业务登录也会使用 Disney 出口。Disney 清单增至 12 条，全目录 594 个域名模式、40 处登记重叠；匿名地区检测、授权配置和播放 Cookie 接口有成功响应，尚未验证账号登录与完整 DRM 播放。节点需刷新远程清单后生效
