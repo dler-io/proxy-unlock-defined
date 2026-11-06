@@ -1,0 +1,7 @@
+# MyTVSuper
+# Generated from: parts/MyTVSuper/Analytics.list, parts/MyTVSuper/Core.list
+# Edit the canonical parts and run python3 scripts/build.py
++.mytvsuper.com
++.mytvsuperlimited.hb.omtrdc.net
++.mytvsuperlimited.sc.omtrdc.net
++.tvb.com

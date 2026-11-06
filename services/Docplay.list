@@ -1,0 +1,7 @@
+# Docplay
+# 服务域名规则；出口由节点的 region 配置
++.0c86e2d1-madman-com-au.akamaized.net
++.5a929471-madman-com-au.akamaized.net
++.879ed873-madman-com-au.akamaized.net
++.docplay.com
++.ff1be285-madman-com-au.akamaized.net

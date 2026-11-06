@@ -1,0 +1,20 @@
+# HBOGOAsia
+# Generated from: parts/HBOGOAsia/Base.list, parts/HBOGOAsia/Extended.list
+# Edit the canonical parts and run python3 scripts/build.py
++.bcbolthboa-a.akamaihd.net
++.dai3fd1oh325y.cloudfront.net
++.hboasia1-i.akamaihd.net
++.hboasia2-i.akamaihd.net
++.hboasia3-i.akamaihd.net
++.hboasia4-i.akamaihd.net
++.hboasia5-i.akamaihd.net
++.hboasialive.akamaized.net
++.hbogo.co.th
++.hbogoasia.com
++.hbogoasia.hk
++.hbogoasia.id
++.hbogoasia.ph
++.hbogoasia.sg
++.hbogoasia.tw
++.hbogoprod-vod.akamaized.net
++.hbolb.onwardsmg.com

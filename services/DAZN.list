@@ -1,0 +1,11 @@
+# DAZN
+# Generated from: parts/DAZN/CloudFront.list, parts/DAZN/Core.list
+# Edit the canonical parts and run python3 scripts/build.py
++.d151l6v8er5bdm.cloudfront.net
++.d1sgwhnao7452x.cloudfront.net
++.dazn-api.com
++.dazn.com
++.dazndn.com
++.dcalivedazn.akamaized.net
++.dcblivedazn.akamaized.net
++.indazn.com

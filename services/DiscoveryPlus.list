@@ -1,0 +1,9 @@
+# DiscoveryPlus
+# 服务域名规则；出口由节点的 region 配置
++.disco-api.com
++.discoveryplus.com
++.dnitv.com
++.go-prod-vz.akamaized.net
++.kvinit-prod.api.kochava.com
++.us1-prod-images.disco-api.com
++.us1-prod.disco-api.com

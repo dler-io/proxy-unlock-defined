@@ -1,0 +1,4 @@
+# MyTVSuper / Analytics
+# Canonical subset; outbound selection belongs in node configuration
++.mytvsuperlimited.hb.omtrdc.net
++.mytvsuperlimited.sc.omtrdc.net

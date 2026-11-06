@@ -1,0 +1,14 @@
+# NBA
+# 服务域名规则；出口由节点的 region 配置
++.lion-nba-msl.akamaized.net
++.nba-api-cdn.opin.media
++.nba.com
++.nbaapi.neulion.com
++.nbanlds19vod.akamaized.net
++.nbaprop.sc.omtrdc.net
++.nbaprop.tt.omtrdc.net
++.neulion-a.akamaihd.net
++.neulion.com
++.neulionqos-a.akamaihd.net
++.nlnbamdnyc-a.akamaihd.net
++.sdk.iad-03.braze.com

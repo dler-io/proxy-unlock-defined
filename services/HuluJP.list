@@ -1,0 +1,7 @@
+# HuluJP
+# 服务域名规则；出口由节点的 region 配置
++.happyon.jp
++.hjholdings.jp
++.hulu.jp
++.prod.hjholdings.tv
++.streaks.jp

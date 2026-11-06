@@ -1,0 +1,13 @@
+# Merge rules into the existing proxy-unlock section; retain its nodes/groups
+proxy-unlock:
+  rule-interval: 600
+  rules:
+    AI:
+      url: "https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/services/AI.list"
+      region: "AI"
+    Disney:
+      url: "https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/services/Disney.list"
+      region: "SG"
+    Netflix:
+      url: "https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/services/Netflix.list"
+      region: "SG"

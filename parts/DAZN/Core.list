@@ -1,0 +1,8 @@
+# DAZN / Core
+# Canonical subset; outbound selection belongs in node configuration
++.dazn-api.com
++.dazn.com
++.dazndn.com
++.dcalivedazn.akamaized.net
++.dcblivedazn.akamaized.net
++.indazn.com

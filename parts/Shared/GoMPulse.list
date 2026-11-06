@@ -1,0 +1,3 @@
+# Shared / GoMPulse
+# Canonical subset; outbound selection belongs in node configuration
++.go-mpulse.net

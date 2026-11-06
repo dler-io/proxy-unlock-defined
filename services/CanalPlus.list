@@ -1,0 +1,9 @@
+# CanalPlus
+# Generated from: parts/CanalPlus/Core.list, parts/CanalPlus/MyCanal.list
+# Edit the canonical parts and run python3 scripts/build.py
++.canal-plus.com
++.canalplus-bo.net
++.canalplus-cdn.net
++.canalplus.com
++.canalplus.pro
++.mycanal.fr

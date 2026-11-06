@@ -1,0 +1,5 @@
+# EncoreTVB
+# 服务域名规则；出口由节点的 region 配置
++.bcbolt446c5271-a.akamaihd.net
++.content.jwplatform.com
++.encoretvb.com

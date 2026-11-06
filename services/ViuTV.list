@@ -1,0 +1,5 @@
+# ViuTV
+# Generated from: parts/ViuTV/Core.list, parts/ViuTV/LiveCDN.list
+# Edit the canonical parts and run python3 scripts/build.py
++.pccw-live-cdn-viutv.akamaized.net
++.viu.tv

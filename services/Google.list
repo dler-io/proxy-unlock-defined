@@ -1,0 +1,18 @@
+# Google
+# 服务域名规则；出口由节点的 region 配置
+# Gemini web/share and app links; shared static resources keep their normal routes
+# YouTube links, privacy-enhanced embeds and Kids; video CDN keeps its normal route
+# https://support.google.com/youtube/answer/171780?hl=en
++.gemini.app.google
++.gemini.google
++.google.cn
++.google.com
++.googleapis.cn
++.googleapis.com
++.redirector.googlevideo.com
++.xn--ngstr-lra8j.com
++.youtu.be
++.youtube-nocookie.com
++.youtube.com
++.youtubekids.com
++.yt.be

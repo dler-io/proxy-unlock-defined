@@ -1,0 +1,3 @@
+# ViuTV / LiveCDN
+# Canonical subset; outbound selection belongs in node configuration
++.pccw-live-cdn-viutv.akamaized.net

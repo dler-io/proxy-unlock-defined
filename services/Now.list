@@ -1,0 +1,7 @@
+# Now
+# Generated from: parts/Now/NowE.list, parts/Now/NowTV.list
+# Edit the canonical parts and run python3 scripts/build.py
++.now-tv.com
++.now.com
++.nowe.com
++.pccw-cf-epl.akamaized.net

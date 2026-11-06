@@ -1,0 +1,7 @@
+# KKTV
+# 服务域名规则；出口由节点的 region 配置
++.kfs.io
++.kkbox.com
++.kkbox.com.tw
++.kktv.com.tw
++.kktv.me

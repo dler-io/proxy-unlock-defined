@@ -1,0 +1,5 @@
+# Radiko
+# 服务域名规则；出口由节点的 region 配置
++.radiko.jp
++.radionikkei.jp
++.smartstream.ne.jp
