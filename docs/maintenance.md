@@ -6,11 +6,11 @@
 - 普通服务直接修改 `services/` 中的清单。已拆分的服务在 `parts/` 修改源文件，再运行 `python3 scripts/build.py` 生成完整清单和组合清单
 - 域名使用小写，每行一条，按字典序排列。已知只需匹配一个主机时使用精确模式。确认整个域及子域均属于目标范围后，再使用 `+.` 后缀规则
 - 共享平台或归属待确认的条目放入 `review/`，停运服务的存档放入 `legacy/`。生成这两类条目的配置时须显式指定 `--include-review`
-- 更新 [服务目录](catalog.md)或[子清单目录](subsets.md)中受影响的行。Google 搜索、YouTube 和 Gemini 的独立清单在 [`warp-google/`](../warp-google/) 单独维护
+- 更新 [服务目录](catalog.md)或[子清单目录](subsets.md)中受影响的行。仅匹配 `googlevideo.com` 及其子域的独立清单在 [`warp-google/`](../warp-google/) 单独维护
 
 ## 匹配范围
 
-同一个匹配模式应只有一个来源。父域与其他服务的具体子域有意重叠时，在 [`policy/overlaps.json`](../policy/overlaps.json) 记录双方服务、模式和理由，并确认使用端会按预期处理。例如普通 Gemini 入口归入 Google，企业入口 `+.business.gemini.google` 由更具体的 AI 规则覆盖
+同一个匹配模式应只有一个来源。父域与其他服务的具体子域有意重叠时，在 [`policy/overlaps.json`](../policy/overlaps.json) 记录双方服务、模式和理由，并确认使用端会按预期处理。Google 旗下服务统一归入 Google 清单，已被 `+.google.com`、`+.googleapis.com` 或 `+.gemini.google` 覆盖的子域不再单独列出
 
 规则按域名匹配，同一主机上的不同 URL 路径会命中同一条规则。共享登录、API 和 CDN 域名应按实际用途控制范围。服务的防火墙放行清单可以用于核对依赖，是否为某个依赖指定出口需单独判断
 

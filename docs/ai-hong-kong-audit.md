@@ -2,6 +2,8 @@
 
 核查日期为 2026-10-12
 
+归属更新（2026-11-11）：Google 旗下服务已统一迁至 [Google 服务清单](../services/Google.list)，下文保留原核查依据；历史上的 AI 清单归属不代表当前分流。产品地区限制仍需由使用端的 Google 出口满足
+
 这份记录说明 [AI 服务清单](../services/AI.list) 中部分域名的收录依据，覆盖产品入口、模型接口和登录依赖
 
 新增依据为服务官方地区说明，或官方明确声明适用的模型供应商地区限制；网站能打开、支持付款、模型部署在某地区，都不等于香港用户能使用所有模型。第三方清单仅用于发现候选项，不作为新增限制的唯一依据
@@ -55,7 +57,7 @@ TRAE [2026 年 2 月订阅 FAQ](https://forum.trae.cn/t/topic/59)曾列香港可
 - `antigravity-unleash.goog` 出现在第三方规则与二进制分析中，但本次未取得官方接口用途及必要性说明，不仅凭域名存在或名称相似新增
 - Antigravity 企业版的 `businessaicode`、`discoveryengine` 及 Gemini Code Assist Standard/Enterprise 的 `cloudaicompanion` 有官方网络清单，但未取得这些企业产品对香港用户一律不可用的独立证据，未套用个人版地区名单扩大到共享 Cloud API
 - 新增精确主机以及 Cohere 新旧 API、TRAE 网站均经 Google 和 Cloudflare DNS 复核有 A 记录；该结果仅证明解析状态
-- AIDA 对 Google 通用后缀的覆盖关系单独登记于 [`policy/overlaps.json`](../policy/overlaps.json)
+- AIDA 现由 Google 通用后缀覆盖，不再保留 AI 对 Google 的跨服务覆盖声明
 - 核查范围包括规则、DNS 和官方地区说明。账号登录与模型调用仍需结合实际出口验证
 
 服务的现行地区政策以各自的官方说明为准

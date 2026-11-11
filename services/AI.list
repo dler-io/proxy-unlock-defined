@@ -1,30 +1,18 @@
 # AI
 # 服务域名规则；出口由节点的 region 配置
+# Google-owned services are maintained in Google.list
 # Apple Intelligence / Siri: https://github.com/SukkaW/Surge/blob/master/Source/non_ip/apple_intelligence.conf
 # Cursor sign-in: https://cursor.com/help/troubleshooting/sign-in-domains
 # xAI / Grok: suffix rules cover shared sign-in; keep accounts.spacex.ai exact
-# Google Labs / Project Genie: https://labs.google/fx/faq
 # Kiro model regions: https://kiro.dev/faq/
 # Kiro endpoints: https://kiro.dev/docs/privacy-and-security/firewalls/
 # 2026-10-12 Hong Kong availability audit: ../docs/ai-hong-kong-audit.md
 # Cohere: https://cohere.com/saas-agreement
-# Chrome DevTools AI: https://developer.chrome.com/docs/devtools/ai-assistance/get-started
 # TRAE International: https://docs.trae.ai/ide/supported-countries-and-regions
-# Gemini web shared dependencies: https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/gemini-app-firewall-settings
-# Gemini web/Chrome entries below are commented out so warp-google can claim them
-# Gemini Enterprise keeps +.business.gemini.google; restricted products keep their AI routes
-# Shared static assets, YouTube and advertising/analytics policies: ../docs/gemini-firewall-audit.md
-# Antigravity Enterprise (global / US / EU / mTLS): https://antigravity.google/docs/enterprise#network-allowlists-and-mtls-endpoints
 # Muse from Meta: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
-+.aisandbox-pa.googleapis.com
-+.aistudio.google.com
 +.anthropic.com
-+.antigravity.google
-+.antigravity.google.com
 +.augment.com
 +.augmentcode.com
-# +.bard.google.com
-+.business.gemini.google
 +.cerebras.ai
 +.chat.com
 +.chatgpt.com
@@ -47,16 +35,9 @@
 +.cursor.sh
 +.cursorapi.com
 +.cursorvm.com
-+.deepmind.com
-+.deepmind.google
 +.diabrowser.com
 +.diabrowser.engineering
 +.dify.ai
-+.geller-pa.googleapis.com
-# +.gemini.google
-# +.gemini.google.com
-+.generativeai.google
-+.generativelanguage.googleapis.com
 +.githubcopilot.com
 +.grok.com
 +.grokipedia.com
@@ -66,32 +47,18 @@
 +.intercomcdn.com
 +.jasper.ai
 +.jetbrains.ai
-+.jules.google
-+.jules.google.com
 +.kiro.dev
-+.makersuite.google.com
 +.meta.ai
 +.mistral.ai
 +.muse.ai
-+.notebook.google
-+.notebook.google.com
-+.notebooklm.cloud.google.com
-+.notebooklm.google
-+.notebooklm.google.com
 +.oaistatic.com
 +.oaistatsig.com
 +.oaiusercontent.com
-+.opal.goog
-+.opal.google
-+.opal.google.com
-+.opal.withgoogle.com
 +.openai.com
 +.openart.ai
 +.openrouter.ai
 +.perplexity.ai
 +.pplx.ai
-+.proactivebackend-pa.googleapis.com
-+.robinfrontend-pa.googleapis.com
 +.sora.com
 +.trae.ai
 +.traeapi.us
@@ -101,77 +68,43 @@
 +.zed.dev
 account.jetbrains.com
 accounts.spacex.ai
-ai.google.dev
-aida.googleapis.com
-aiplatform.eu.rep.googleapis.com
-aiplatform.googleapis.com
-aiplatform.mtls.googleapis.com
-aiplatform.us.rep.googleapis.com
-alkalicore-pa.clients6.google.com
-alkalimakersuite-pa.clients6.google.com
 anysphere-binaries.s3.us-east-1.amazonaws.com
 api.app.prod.grazie.aws.intellij.net
 api.github.com
 api.jetbrains.cloud
-# apis.google.com
-appcatalyst.pa.googleapis.com
 apple-relay.apple.com
 apple-relay.cloudflare.com
 apple-relay.fastly-edge.com
 apple-relay.mask.apple-dns.net
-businessaicode.eu.rep.googleapis.com
-businessaicode.googleapis.com
-businessaicode.mtls.googleapis.com
-businessaicode.us.rep.googleapis.com
 cdn.openaimerge.com
 cdn.workos.com
 challenges.cloudflare.com
 chat.openai.com.cdn.cloudflare.net
-cloudcode-pa.googleapis.com
-# content-autofill.googleapis.com
 copilot-proxy.githubusercontent.com
 copilot-reports.github.com
 copilot-telemetry.githubusercontent.com
 cp4.cloudflare.com
-# csp.withgoogle.com
-daily-cloudcode-pa.googleapis.com
-daily-cloudcode-pa.sandbox.googleapis.com
 default.exp-tas.com
-discoveryengine.googleapis.com
-discoveryengine.mtls.googleapis.com
-eu-discoveryengine.googleapis.com
-eu-discoveryengine.mtls.googleapis.com
 forwarder.workos.com
 gateway.ai.cloudflare.com
 gspe1-ssl.ls.apple.com
 humb.apple.com
 images.workoscdn.com
-# jnn-pa.googleapis.com
 js.stripe.com
-jules.googleapis.com
-labs.google
 login.live.com
 login.microsoftonline.com
-# maps.googleapis.com
 o207216.ingest.sentry.io
 o33249.ingest.sentry.io
 oauth.account.jetbrains.com
-# ogs.google.com
 openaiapi-site.azureedge.net
 openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 openaicomproductionae4b.blob.core.windows.net
-# optimizationguide-pa.googleapis.com
 origin-tracker.githubusercontent.com
-# play.google.com
 production-openaicom-storage.azureedge.net
 q.eu-central-1.amazonaws.com
 q.us-east-1.amazonaws.com
 rum.browser-intake-datadoghq.com
 setup.workos.com
-# streetviewpixels-pa.googleapis.com
 trae-api-sg.mchost.guru
 trae-api-us.mchost.guru
-us-discoveryengine.googleapis.com
-us-discoveryengine.mtls.googleapis.com
-# waa-pa.clients6.google.com
 workos.imgix.net

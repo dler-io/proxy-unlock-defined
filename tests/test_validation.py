@@ -75,8 +75,9 @@ class ValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "warp-google: invalid domain pattern"):
             check(root)
 
-    def test_gemini_web_uses_warp_while_restricted_services_keep_ai(self):
+    def test_google_services_use_google_and_warp_only_covers_video(self):
         ai = read_lines(ROOT / "services/AI.list")
+        google = read_lines(ROOT / "services/Google.list")
         warp = read_lines(ROOT / "warp-google/domains.list")
 
         def matches(host, patterns):
@@ -92,23 +93,48 @@ class ValidationTests(unittest.TestCase):
                      "streetviewpixels-pa.googleapis.com", "content-autofill.googleapis.com"):
             with self.subTest(web=host):
                 self.assertFalse(matches(host, ai))
-                self.assertTrue(matches(host, warp))
+                self.assertTrue(matches(host, google))
+                self.assertFalse(matches(host, warp))
         for host in ("aistudio.google.com", "generativelanguage.googleapis.com",
                      "antigravity.google", "notebooklm.google.com", "opal.google",
                      "labs.google", "aida.googleapis.com", "business.gemini.google",
                      "auth.business.gemini.google", "geller-pa.googleapis.com",
-                     "proactivebackend-pa.googleapis.com", "robinfrontend-pa.googleapis.com"):
-            with self.subTest(restricted=host):
+                     "proactivebackend-pa.googleapis.com", "robinfrontend-pa.googleapis.com",
+                     "aisandbox-pa.googleapis.com", "ai.google.dev", "makersuite.google.com",
+                     "alkalicore-pa.clients6.google.com", "alkalimakersuite-pa.clients6.google.com",
+                     "cloudcode-pa.googleapis.com", "daily-cloudcode-pa.sandbox.googleapis.com",
+                     "aiplatform.mtls.googleapis.com", "businessaicode.eu.rep.googleapis.com",
+                     "discoveryengine.googleapis.com", "jules.google", "jules.googleapis.com",
+                     "deepmind.com", "deepmind.google", "generativeai.google",
+                     "notebook.google", "notebooklm.google", "opal.goog", "opal.withgoogle.com",
+                     "www.google.co.jp", "www.google.com.hk", "auth.cloud.google",
+                     "notebooklm.cloud.google", "payments.cloud.google",
+                     "vertexaisearch.cloud.google", "preview.scf.usercontent.goog"):
+            with self.subTest(google=host):
+                self.assertFalse(matches(host, ai))
+                self.assertTrue(matches(host, google))
+                self.assertFalse(matches(host, warp))
+        self.assertEqual(warp, ["+.googlevideo.com"])
+        for host in ("googlevideo.com", "redirector.googlevideo.com",
+                     "rr1---sn-example.googlevideo.com", "a.b.googlevideo.com"):
+            with self.subTest(video=host):
+                self.assertTrue(matches(host, warp))
+        for host in ("notgooglevideo.com", "googlevideo.com.example.com",
+                     "www.youtube.com", "www.google.com", "auth.cloud.google",
+                     "preview.scf.usercontent.goog"):
+            with self.subTest(non_video=host):
+                self.assertFalse(matches(host, warp))
+        for host in ("chatgpt.com", "claude.ai", "cursor.com", "muse.ai"):
+            with self.subTest(other_service=host):
                 self.assertTrue(matches(host, ai))
+                self.assertFalse(matches(host, google))
         for host in ("gmail.com", "mail.gmail.com", "android.com", "unrelated.google",
                      "unrelated.goog", "unrelated.withgoogle.com", "www.gstatic.com",
                      "csp.withgoogle.com", "i.ytimg.com", "yt3.ggpht.com",
                      "lh3.googleusercontent.com", "pki.goog"):
             with self.subTest(unrelated=host):
                 self.assertFalse(matches(host, warp))
-        text = (ROOT / "services/AI.list").read_text()
-        self.assertIn("# +.gemini.google.com\n", text)
-        self.assertIn("# csp.withgoogle.com\n", text)
+                self.assertFalse(matches(host, google))
 
     def test_part_edit_updates_full_service_from_one_source(self):
         root = self.fixture()
