@@ -75,7 +75,7 @@ class ValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "warp-google: invalid domain pattern"):
             check(root)
 
-    def test_google_services_use_google_and_warp_only_covers_video(self):
+    def test_google_services_use_google_and_warp_keeps_general_scope(self):
         ai = read_lines(ROOT / "services/AI.list")
         google = read_lines(ROOT / "services/Google.list")
         warp = read_lines(ROOT / "warp-google/domains.list")
@@ -94,7 +94,7 @@ class ValidationTests(unittest.TestCase):
             with self.subTest(web=host):
                 self.assertFalse(matches(host, ai))
                 self.assertTrue(matches(host, google))
-                self.assertFalse(matches(host, warp))
+                self.assertTrue(matches(host, warp))
         for host in ("aistudio.google.com", "generativelanguage.googleapis.com",
                      "antigravity.google", "notebooklm.google.com", "opal.google",
                      "labs.google", "aida.googleapis.com", "business.gemini.google",
@@ -113,16 +113,13 @@ class ValidationTests(unittest.TestCase):
             with self.subTest(google=host):
                 self.assertFalse(matches(host, ai))
                 self.assertTrue(matches(host, google))
-                self.assertFalse(matches(host, warp))
-        self.assertEqual(warp, ["+.googlevideo.com"])
-        for host in ("googlevideo.com", "redirector.googlevideo.com",
-                     "rr1---sn-example.googlevideo.com", "a.b.googlevideo.com"):
-            with self.subTest(video=host):
+        for host in ("redirector.googlevideo.com", "www.youtube.com", "www.google.co.jp",
+                     "auth.cloud.google", "preview.scf.usercontent.goog"):
+            with self.subTest(warp=host):
                 self.assertTrue(matches(host, warp))
-        for host in ("notgooglevideo.com", "googlevideo.com.example.com",
-                     "www.youtube.com", "www.google.com", "auth.cloud.google",
-                     "preview.scf.usercontent.goog"):
-            with self.subTest(non_video=host):
+        for host in ("googlevideo.com", "rr1---sn-example.googlevideo.com",
+                     "a.b.googlevideo.com", "notgooglevideo.com", "googlevideo.com.example.com"):
+            with self.subTest(video=host):
                 self.assertFalse(matches(host, warp))
         for host in ("chatgpt.com", "claude.ai", "cursor.com", "muse.ai"):
             with self.subTest(other_service=host):
