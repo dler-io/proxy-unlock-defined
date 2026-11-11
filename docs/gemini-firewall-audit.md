@@ -6,7 +6,7 @@
 - Chrome 内置 Gemini 使用 `gemini.google.com/glic`，资格状态接口由 `+.googleapis.com` 覆盖。Chrome DevTools 的 `aida.googleapis.com` 也由 Google 清单的 `+.googleapis.com` 覆盖。[Chromium 配置](https://chromium.googlesource.com/chromium/src/+/HEAD/chrome/common/chrome_features.cc)
 - 自 2026-11-11 起，Google 旗下服务统一归入 [Google 服务清单](../services/Google.list)：包括 Gemini 网页与企业版、AI Studio、Gemini API、Antigravity / Code Assist、NotebookLM、Jules、Opal、DeepMind、Labs 和 DevTools。原 AI 清单的 48 条有效规则迁出，其中 36 条由 Google 清单已有父域覆盖，另外 12 条作为独立域名保留
 - `business.gemini.google` 及认证子域由 `+.gemini.google` 覆盖；产品专用的 `google.com` 与 `googleapis.com` 子域由对应父域覆盖。清理 AI 清单中原先注释的网页与共享接口条目，共享 CSP 主机 `csp.withgoogle.com` 不恢复收录
-- 迁移后需加载 Google 清单并配置适合目标产品的出口；仅加载 AI 清单不再涵盖这些产品。归属调整不改变产品地区或账号资格要求；独立 [WARP 清单](../warp-google/README.md)保留原 Google 搜索、YouTube 入口和 Gemini 业务范围；完整的视频 CDN 范围由使用端的账户功能额外启用
+- 迁移后需加载 Google 清单并配置适合目标产品的出口；仅加载 AI 清单不再涵盖这些产品。归属调整不改变产品地区或账号资格要求；独立 [WARP 清单](../warp-google/README.md)保留原 Google 搜索、YouTube 入口和 Gemini 业务范围；视频 CDN 范围由独立的 [YouTube 清单](../warp-youtube/README.md)维护，并由面板的「YouTube 后台播放兼容」账户设置控制；`redirector.googlevideo.com` 仍保留在 Google 清单中
 - 原 WARP 清单中的地区搜索域名、`auth.cloud.google`、`notebooklm.cloud.google`、`payments.cloud.google`、`vertexaisearch.cloud.google` 和交互预览域 `+.scf.usercontent.goog` 同步迁入 Google 清单，让 Google 服务清单也覆盖这些既有业务入口；交互预览不按静态 CDN 排除
 - 图片、字体、内容托管及其他共享依赖可沿用使用端的通用分流，广告与统计主机的可达性取决于使用端的策略
 

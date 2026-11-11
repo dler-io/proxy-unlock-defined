@@ -2,7 +2,7 @@
 
 按服务维护的域名分流规则集，覆盖 Netflix、Disney+、BBC、Google、YouTube 和常见 AI 服务。每份清单可以独立引用，出口由使用端配置
 
-[服务目录](docs/catalog.md) · [子清单目录](docs/subsets.md) · [维护指南](docs/maintenance.md) · [Google / Gemini 专用清单](warp-google/README.md)
+[服务目录](docs/catalog.md) · [子清单目录](docs/subsets.md) · [维护指南](docs/maintenance.md) · [Google / Gemini 专用清单](warp-google/README.md) · [YouTube 视频专用清单](warp-youtube/README.md)
 
 ## 选择清单
 
@@ -12,6 +12,7 @@
 | [`parts/`](parts/) · [`subsets/`](subsets/) | 可独立使用的源子清单，以及从源子清单生成的组合 |
 | [`review/`](review/) · [`legacy/`](legacy/) | 2 份共享或待核查合集、2 份停运服务的存档，按需显式启用 |
 | [`warp-google/`](warp-google/) | 独立维护的 Google 搜索、YouTube 和 Gemini 清单，可单独接入 |
+| [`warp-youtube/`](warp-youtube/) | 独立的 YouTube 视频域名清单，由面板的「YouTube 后台播放兼容」账户设置控制 |
 | [`catalog.json`](catalog.json) | 服务 ID、清单路径、状态和组合关系 |
 
 服务目录共收录 760 个唯一域名模式。规则校验覆盖文件格式和匹配范围，实际可用性取决于出口、账号及服务的地区政策

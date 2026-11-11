@@ -193,10 +193,11 @@ def check(root=ROOT, verify_generated=True):
         raise ValueError("removed domains must be sorted, unique bare domain names")
     errors = lint_rules(rules, approvals, set(removed))
     # This outbound policy may overlap service rules, so validate it separately.
-    warp_google = root / "warp-google/domains.list"
-    if any(p.is_symlink() for p in (warp_google, *warp_google.parents)) or not warp_google.is_file():
-        raise ValueError("warp-google/domains.list: missing or symlinked ruleset")
-    errors.extend(lint_rules({"warp-google": read_lines(warp_google)}, [], set()))
+    for name in ("warp-google", "warp-youtube"):
+        path = root / name / "domains.list"
+        if any(p.is_symlink() for p in (path, *path.parents)) or not path.is_file():
+            raise ValueError(f"{name}/domains.list: missing or symlinked ruleset")
+        errors.extend(lint_rules({name: read_lines(path)}, [], set()))
     if errors:
         raise ValueError("\n".join(errors))
     return entries, rules, approvals

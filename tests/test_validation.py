@@ -65,20 +65,23 @@ class ValidationTests(unittest.TestCase):
         shutil.copytree(ROOT, root, ignore=shutil.ignore_patterns(".git", "__pycache__"))
         return root
 
-    def test_warp_google_is_validated_without_service_ownership_conflicts(self):
+    def test_warp_lists_are_validated_without_service_ownership_conflicts(self):
         root = self.fixture()
-        path = root / "warp-google/domains.list"
-        path.write_text("+.google.com\n")
-        entries, _, _ = check(root)
-        self.assertNotIn("warp-google", entries)
-        path.write_text("+.google.*\n")
-        with self.assertRaisesRegex(ValueError, "warp-google: invalid domain pattern"):
-            check(root)
+        for name in ("warp-google", "warp-youtube"):
+            path = root / name / "domains.list"
+            path.write_text("+.google.com\n")
+            entries, _, _ = check(root)
+            self.assertNotIn(name, entries)
+            path.write_text("+.google.*\n")
+            with self.assertRaisesRegex(ValueError, f"{name}: invalid domain pattern"):
+                check(root)
+            path.write_text("+.google.com\n")
 
     def test_google_services_use_google_and_warp_keeps_general_scope(self):
         ai = read_lines(ROOT / "services/AI.list")
         google = read_lines(ROOT / "services/Google.list")
         warp = read_lines(ROOT / "warp-google/domains.list")
+        youtube = read_lines(ROOT / "warp-youtube/domains.list")
 
         def matches(host, patterns):
             return any(rule == host or rule.startswith("+.") and
@@ -121,6 +124,12 @@ class ValidationTests(unittest.TestCase):
                      "a.b.googlevideo.com", "notgooglevideo.com", "googlevideo.com.example.com"):
             with self.subTest(video=host):
                 self.assertFalse(matches(host, warp))
+        self.assertEqual(youtube, ["+.googlevideo.com"])
+        for host in ("googlevideo.com", "redirector.googlevideo.com", "r1.googlevideo.com"):
+            self.assertTrue(matches(host, youtube))
+        for host in ("www.google.com", "www.youtube.com", "i.ytimg.com",
+                     "notgooglevideo.com", "googlevideo.com.example.com"):
+            self.assertFalse(matches(host, youtube))
         for host in ("chatgpt.com", "claude.ai", "cursor.com", "muse.ai"):
             with self.subTest(other_service=host):
                 self.assertTrue(matches(host, ai))

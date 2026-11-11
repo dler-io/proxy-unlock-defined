@@ -6,7 +6,7 @@
 - 普通服务直接修改 `services/` 中的清单。已拆分的服务在 `parts/` 修改源文件，再运行 `python3 scripts/build.py` 生成完整清单和组合清单
 - 域名使用小写，每行一条，按字典序排列。已知只需匹配一个主机时使用精确模式。确认整个域及子域均属于目标范围后，再使用 `+.` 后缀规则
 - 共享平台或归属待确认的条目放入 `review/`，停运服务的存档放入 `legacy/`。生成这两类条目的配置时须显式指定 `--include-review`
-- 更新 [服务目录](catalog.md)或[子清单目录](subsets.md)中受影响的行。Google 搜索、YouTube 和 Gemini 的独立清单在 [`warp-google/`](../warp-google/) 单独维护
+- 更新 [服务目录](catalog.md)或[子清单目录](subsets.md)中受影响的行。Google 搜索、YouTube 和 Gemini 的独立清单在 [`warp-google/`](../warp-google/) 单独维护，YouTube 视频域名在 [`warp-youtube/`](../warp-youtube/) 单独维护
 
 ## 匹配范围
 
