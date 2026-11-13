@@ -8,7 +8,6 @@
 # Sources and routing scope: ../docs/gemini-firewall-audit.md
 # YouTube links, privacy-enhanced embeds and Kids; video CDN keeps its normal route
 # https://support.google.com/youtube/answer/171780?hl=en
-+.antigravity.google
 +.deepmind.com
 +.deepmind.google
 +.gemini.app.google

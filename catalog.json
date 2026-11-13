@@ -45,6 +45,13 @@
       "note": "保留现有 AI 服务键，含共享登录、验证码和 API 主机；按域名分流会影响该主机全部业务"
     },
     {
+      "id": "Antigravity",
+      "name": "Google Antigravity / Gemini Code Assist",
+      "path": "services/Antigravity.list",
+      "status": "imported",
+      "note": "独立出口；Google 通用父域仍归 Google 服务，Antigravity 专用子域按更具体规则优先"
+    },
+    {
       "id": "Abema",
       "name": "Abema",
       "path": "services/Abema.list",
@@ -302,7 +309,7 @@
       "name": "Google",
       "path": "services/Google.list",
       "status": "imported",
-      "note": "覆盖 Google 多个业务的大范围规则，AI 子域例外见 policy/overlaps.json"
+      "note": "覆盖 Google 多个业务的大范围规则；Antigravity 使用独立规则和出口，例外见 policy/overlaps.json"
     },
     {
       "id": "HBOGOAsia",

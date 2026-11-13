@@ -1,5 +1,131 @@
 [
   {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.aiplatform.eu.rep.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.aiplatform.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.aiplatform.mtls.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.aiplatform.us.rep.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.antigravity.google.com",
+    "reason": "Antigravity 产品入口使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.businessaicode.eu.rep.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.businessaicode.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.businessaicode.mtls.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.businessaicode.us.rep.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.cloudcode-pa.googleapis.com",
+    "reason": "Antigravity API 使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.daily-cloudcode-pa.googleapis.com",
+    "reason": "Antigravity API 使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.daily-cloudcode-pa.sandbox.googleapis.com",
+    "reason": "Antigravity API 使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.discoveryengine.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.discoveryengine.mtls.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.eu-discoveryengine.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.eu-discoveryengine.mtls.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.us-discoveryengine.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.us-discoveryengine.mtls.googleapis.com",
+    "reason": "Antigravity 企业端点使用独立新加坡出口，按更具体域名优先"
+  },
+  {
     "parent_service": "BBC",
     "parent_rule": "+.bbci.co.uk",
     "child_service": "BritBox",

@@ -1,0 +1,23 @@
+# Google Antigravity / Gemini Code Assist
+# Consumer and documented enterprise endpoints
+# Sources: https://antigravity.google/docs/faq
+# https://antigravity.google/docs/enterprise#network-allowlists-and-mtls-endpoints
++.aiplatform.eu.rep.googleapis.com
++.aiplatform.googleapis.com
++.aiplatform.mtls.googleapis.com
++.aiplatform.us.rep.googleapis.com
++.antigravity.google
++.antigravity.google.com
++.businessaicode.eu.rep.googleapis.com
++.businessaicode.googleapis.com
++.businessaicode.mtls.googleapis.com
++.businessaicode.us.rep.googleapis.com
++.cloudcode-pa.googleapis.com
++.daily-cloudcode-pa.googleapis.com
++.daily-cloudcode-pa.sandbox.googleapis.com
++.discoveryengine.googleapis.com
++.discoveryengine.mtls.googleapis.com
++.eu-discoveryengine.googleapis.com
++.eu-discoveryengine.mtls.googleapis.com
++.us-discoveryengine.googleapis.com
++.us-discoveryengine.mtls.googleapis.com
