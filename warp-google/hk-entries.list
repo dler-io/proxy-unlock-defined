@@ -1,0 +1,15 @@
+# Hong Kong: explicit YouTube and consumer Gemini entry points.
+# Search hosts are derived from domains.list when building hk.list.
++.youtu.be
++.youtube-nocookie.com
++.youtube.com
++.youtubekids.com
++.yt.be
+gemini.app.google
+gemini.google
+gemini.google.com
+geminiweb-pa.googleapis.com
+redirector.googlevideo.com
+share.gemini.google
+youtube.googleapis.com
+youtubei.googleapis.com

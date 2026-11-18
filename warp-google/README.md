@@ -19,6 +19,19 @@ https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/warp-google/
 
 Gemini 网页和 AI Studio 由 `+.google.com` 覆盖，分享和 App 唤起分别由 `+.gemini.google`、`+.gemini.app.google` 覆盖。预览域名和企业接口参照 [SafeContentFrame 说明](https://bughunters.google.com/blog/beyond-sandbox-domains-rendering-untrusted-web-content-with-safecontentframe)与 [Gemini Enterprise 网络文档](https://docs.cloud.google.com/gemini/enterprise/docs/private-ui-access)
 
+## 香港节点
+
+仅在香港机器的规则配置中指定香港版清单。其他地区沿用上面的默认地址
+
+```yaml
+warp-google: true
+warp-google-rule-url: 'https://raw.githubusercontent.com/dler-io/proxy-unlock-defined/main/warp-google/hk.list'
+```
+
+香港版对搜索域名只匹配根域和 `www`，并保留 YouTube 入口、专用 API、视频重定向以及个人 Gemini 的网页、分享和 App 入口。Antigravity、Code Assist、NotebookLM、AI Studio 和模型 API 的专用域名继续由已配置的服务规则处理。共享登录主机也沿用原路由
+
+搜索域名从默认清单派生，其他入口在 [hk-entries.list](hk-entries.list) 中维护。更新后运行 `python3 scripts/build.py` 生成 [hk.list](hk.list)，再运行 `python3 scripts/check.py` 和 `python3 -m unittest discover -s tests`
+
 ## 与服务清单搭配
 
 - [Google 服务清单](../services/Google.list)覆盖通用 Google 业务，[AI 服务清单](../services/AI.list)也收录部分有地区限制的 Google AI 服务。同时加载时应确认使用端的出口与优先级

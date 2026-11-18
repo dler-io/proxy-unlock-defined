@@ -70,6 +70,7 @@ class ValidationTests(unittest.TestCase):
         for name in ("warp-google", "warp-youtube"):
             path = root / name / "domains.list"
             path.write_text("+.google.com\n")
+            build(root)
             entries, _, _ = check(root)
             self.assertNotIn(name, entries)
             path.write_text("+.google.*\n")
@@ -160,6 +161,30 @@ class ValidationTests(unittest.TestCase):
             with self.subTest(unrelated=host):
                 self.assertFalse(matches(host, warp))
                 self.assertFalse(matches(host, google))
+
+    def test_hong_kong_warp_scope(self):
+        hk = read_lines(ROOT / "warp-google/hk.list")
+        ai = read_lines(ROOT / "services/AI.list")  # Includes the standalone Antigravity list.
+        self.assertEqual(lint_rules({"HK": hk, "AI": ai}, [], set()), [])
+        for host in ("google.com.hk", "www.google.com", "www.google.co.jp",
+                     "gemini.google.com", "youtubei.googleapis.com", "redirector.googlevideo.com"):
+            self.assertIn(host, hk)
+        for parent in ("google.com", "google.com.hk", "googleapis.com", "gemini.google"):
+            self.assertNotIn("+." + parent, hk)
+
+    def test_hong_kong_search_hosts_follow_default_list_updates(self):
+        root = self.fixture()
+        path = root / "warp-google/domains.list"
+        values = read_lines(path)
+        values.remove("+.google.co.jp")
+        path.write_text("\n".join(values) + "\n")
+        with self.assertRaisesRegex(ValueError, r"warp-google/hk.list: stale generated"):
+            check(root)
+        build(root)
+        check(root)
+        hk = read_lines(root / "warp-google/hk.list")
+        self.assertNotIn("google.co.jp", hk)
+        self.assertNotIn("www.google.co.jp", hk)
 
     def test_part_edit_updates_full_service_from_one_source(self):
         root = self.fixture()

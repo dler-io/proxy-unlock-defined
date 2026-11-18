@@ -189,6 +189,20 @@ def catalog_material(root=ROOT):
               for p in (root / directory).rglob("*.list")}
     if actual - paths or paths - actual - generated.keys():
         raise ValueError(f"uncataloged or missing files: {sorted(actual ^ paths)}")
+    # Only search apex/www pairs follow the global list. Other products must
+    # opt in by hostname so unrelated APIs keep their service's own route.
+    general = canonical("warp-google/domains.list")
+    errors = lint_rules({"warp-google": general}, [], set())
+    if errors:
+        raise ValueError("\n".join(errors))
+    hk = canonical("warp-google/hk-entries.list")
+    search = [rule[2:] for rule in general if rule.startswith("+.google.")]
+    hong_kong = sorted(hk + search + ["www." + domain for domain in search])
+    errors = lint_rules({"warp-google-hk": hong_kong}, [], set())
+    if errors:
+        raise ValueError("\n".join(errors))
+    generated["warp-google/hk.list"] = generated_text(
+        "warp-google / Hong Kong", ["warp-google/domains.list", "warp-google/hk-entries.list"], hong_kong)
     for path in generated:
         file = root / path
         if any(p.is_symlink() for p in (file, *file.parents)):
@@ -213,12 +227,12 @@ def check(root=ROOT, verify_generated=True):
     if removed != sorted(set(removed)) or any(not valid_rule(x) or x.startswith("+.") for x in removed):
         raise ValueError("removed domains must be sorted, unique bare domain names")
     errors = lint_rules(rules, approvals, set(removed))
-    # This outbound policy may overlap service rules, so validate it separately.
-    for name in ("warp-google", "warp-youtube"):
-        path = root / name / "domains.list"
-        if any(p.is_symlink() for p in (path, *path.parents)) or not path.is_file():
-            raise ValueError(f"{name}/domains.list: missing or symlinked ruleset")
-        errors.extend(lint_rules({name: read_lines(path)}, [], set()))
+    # This independent outbound policy may overlap service rules. The two
+    # Google variants are checked together when deriving the Hong Kong list.
+    path = root / "warp-youtube/domains.list"
+    if any(p.is_symlink() for p in (path, *path.parents)) or not path.is_file():
+        raise ValueError("warp-youtube/domains.list: missing or symlinked ruleset")
+    errors.extend(lint_rules({"warp-youtube": read_lines(path)}, [], set()))
     if errors:
         raise ValueError("\n".join(errors))
     return entries, rules, approvals
