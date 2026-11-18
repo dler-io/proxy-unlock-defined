@@ -42,7 +42,17 @@
       "name": "AI",
       "path": "services/AI.list",
       "status": "imported",
-      "note": "保留现有 AI 服务键，含共享登录、验证码和 API 主机；按域名分流会影响该主机全部业务"
+      "note": "保留现有 AI 服务键，含共享登录、验证码和 API 主机；按域名分流会影响该主机全部业务",
+      "parts": [
+        {
+          "id": "Core",
+          "name": "其他 AI 及 Google AI Studio、Gemini API 和 DevTools AI",
+          "path": "parts/AI/Core.list"
+        }
+      ],
+      "includes": [
+        "Antigravity"
+      ]
     },
     {
       "id": "Antigravity",

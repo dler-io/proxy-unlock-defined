@@ -6,6 +6,7 @@
 
 | 配置生成器选择键 | 所属服务 | 状态 | URL 路径 | 模式数 |
 |---|---|---|---|---:|
+| `AI_Core` | AI | imported | [parts/AI/Core.list](../parts/AI/Core.list) | 105 |
 | `CanalPlus_Core` | CanalPlus | imported | [parts/CanalPlus/Core.list](../parts/CanalPlus/Core.list) | 4 |
 | `CanalPlus_MyCanal` | CanalPlus | imported | [parts/CanalPlus/MyCanal.list](../parts/CanalPlus/MyCanal.list) | 2 |
 | `DAZN_CloudFront` | DAZN | imported | [parts/DAZN/CloudFront.list](../parts/DAZN/CloudFront.list) | 2 |
@@ -26,6 +27,8 @@
 | `Unclassified_Usercentrics` | Unclassified | review | [parts/Unclassified/Usercentrics.list](../parts/Unclassified/Usercentrics.list) | 1 |
 | `ViuTV_Core` | ViuTV | imported | [parts/ViuTV/Core.list](../parts/ViuTV/Core.list) | 1 |
 | `ViuTV_LiveCDN` | ViuTV | imported | [parts/ViuTV/LiveCDN.list](../parts/ViuTV/LiveCDN.list) | 1 |
+
+`AI` 包含 `AI_Core` 和 `Antigravity`。需要两个出口时，分别引用 `AI_Core` 与 `Antigravity`
 
 `Unclassified_Japanese` 是 JapaneseSites 与 RakutenMagazine 的组合；需要保留较小范围时仅使用 `Unclassified_JapaneseSites`
 

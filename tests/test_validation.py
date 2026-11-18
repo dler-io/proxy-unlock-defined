@@ -99,16 +99,12 @@ class ValidationTests(unittest.TestCase):
                 self.assertFalse(matches(host, ai))
                 self.assertTrue(matches(host, google))
                 self.assertTrue(matches(host, warp))
-        for host in ("aistudio.google.com", "generativelanguage.googleapis.com",
-                     "opal.google",
-                     "labs.google", "aida.googleapis.com", "business.gemini.google",
+        for host in ("opal.google",
+                     "labs.google", "business.gemini.google",
                      "auth.business.gemini.google", "geller-pa.googleapis.com",
                      "proactivebackend-pa.googleapis.com", "robinfrontend-pa.googleapis.com",
-                     "aisandbox-pa.googleapis.com", "ai.google.dev", "makersuite.google.com",
-                     "alkalicore-pa.clients6.google.com", "alkalimakersuite-pa.clients6.google.com",
-                     "cloudcode-pa.googleapis.com", "daily-cloudcode-pa.sandbox.googleapis.com",
-                     "aiplatform.mtls.googleapis.com", "businessaicode.eu.rep.googleapis.com",
-                     "discoveryengine.googleapis.com", "jules.google", "jules.googleapis.com",
+                     "aisandbox-pa.googleapis.com", "ai.google.dev",
+                     "jules.google", "jules.googleapis.com",
                      "deepmind.com", "deepmind.google", "generativeai.google",
                      "opal.goog", "opal.withgoogle.com",
                      "www.google.co.jp", "www.google.com.hk", "auth.cloud.google",
@@ -117,14 +113,25 @@ class ValidationTests(unittest.TestCase):
             with self.subTest(google=host):
                 self.assertFalse(matches(host, ai))
                 self.assertTrue(matches(host, google))
+        self.assertTrue(set(antigravity).issubset(ai))
+        for host in ("aistudio.google.com", "generativelanguage.googleapis.com",
+                     "generativelanguage.mtls.googleapis.com", "makersuite.google.com",
+                     "alkalicore-pa.clients6.google.com",
+                     "alkalimakersuite-pa.clients6.google.com", "aida.googleapis.com",
+                     "cloudcode-pa.googleapis.com", "daily-cloudcode-pa.sandbox.googleapis.com",
+                     "aiplatform.mtls.googleapis.com", "businessaicode.eu.rep.googleapis.com",
+                     "discoveryengine.googleapis.com"):
+            with self.subTest(google_ai=host):
+                self.assertTrue(matches(host, ai))
+                self.assertTrue(matches(host, google))
         for host in ("notebook.google", "notebooklm.google", "notebook.google.com", "notebooklm.google.com"):
             with self.subTest(notebook=host):
                 self.assertIn("+." + host, antigravity)
-                self.assertFalse(matches(host, ai))
+                self.assertTrue(matches(host, ai))
                 self.assertEqual(matches(host, google), host.endswith(".google.com"))
         self.assertTrue(matches("antigravity.google", antigravity))
         self.assertFalse(matches("antigravity.google", google))
-        self.assertFalse(matches("antigravity.google", ai))
+        self.assertTrue(matches("antigravity.google", ai))
         for host in ("redirector.googlevideo.com", "www.youtube.com", "www.google.co.jp",
                      "auth.cloud.google", "preview.scf.usercontent.goog"):
             with self.subTest(warp=host):
@@ -183,6 +190,22 @@ class ValidationTests(unittest.TestCase):
                     build(root)
                 with self.assertRaisesRegex(ValueError, "suffix overlap between parts"):
                     check(root)
+
+    def test_ai_reuses_standalone_antigravity(self):
+        root = self.fixture()
+        path = root / "services/Antigravity.list"
+        host = "new.example.invalid"
+        path.write_text("\n".join(sorted(read_lines(path) + [host])) + "\n")
+        with self.assertRaisesRegex(ValueError, "stale generated"):
+            check(root)
+        build(root)
+        check(root)
+        self.assertIn(host, read_lines(root / "services/AI.list"))
+        with self.assertRaisesRegex(ValueError, "overlapping selections"):
+            render(["AI=US", "Antigravity=SG"])
+        output = render(["AI_Core=US", "Antigravity=SG"])
+        self.assertIn("parts/AI/Core.list", output)
+        self.assertIn("services/Antigravity.list", output)
 
     def test_composed_subset_and_full_service_update_together(self):
         root = self.fixture()

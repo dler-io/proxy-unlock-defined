@@ -10,7 +10,7 @@
 
 ## 匹配范围
 
-同一个匹配模式应只有一个来源。父域与其他服务的具体子域有意重叠时，在 [`policy/overlaps.json`](../policy/overlaps.json) 记录双方服务、模式和理由，并确认使用端会按预期处理。Google 通用业务复用 `+.google.com`、`+.googleapis.com` 或 `+.gemini.google` 等父域规则。香港出口受限、需要独立分流的 Google 业务入口归入 `Antigravity.list`
+同一个匹配模式应只有一个来源。父域与其他服务的具体子域有意重叠时，在 [`policy/overlaps.json`](../policy/overlaps.json) 记录双方服务、模式和理由，并确认使用端会按预期处理。Google 通用业务复用 `+.google.com`、`+.googleapis.com` 或 `+.gemini.google` 等父域规则。AI 完整清单合并 `parts/AI/Core.list` 与 `services/Antigravity.list`。在各自源文件维护规则，再运行 `python3 scripts/build.py`
 
 规则按域名匹配，同一主机上的不同 URL 路径会命中同一条规则。共享登录、API 和 CDN 域名应按实际用途控制范围。服务的防火墙放行清单可以用于核对依赖，是否为某个依赖指定出口需单独判断
 
@@ -19,7 +19,7 @@
 ## 规则来源
 
 - Gemini 的入口、共享依赖和企业版规则见 [Gemini 防火墙清单核对](gemini-firewall-audit.md)，其他 AI 服务的地区依据见 [AI 服务香港可用范围复核](ai-hong-kong-audit.md)
-- Antigravity 企业版的 `businessaicode`、`aiplatform` 和 `discoveryengine` 精确主机来自 [官方网络清单](https://antigravity.google/docs/enterprise#network-allowlists-and-mtls-endpoints)。部分 API 与其他 Google Cloud 产品共享主机
+- Antigravity 企业版的 `businessaicode`、`aiplatform` 和 `discoveryengine` 端点来自 [官方网络清单](https://antigravity.google/docs/enterprise#network-allowlists-and-mtls-endpoints)。部分 API 与其他 Google Cloud 产品共享主机
 - Disney+ 的登录、内容和播放主机参照 [官方登录页](https://www.disneyplus.com/identity/login)及 [Web SDK 配置](https://client-sdk-configs.bamgrid.com/bam-sdk/v7.0/disney-svod-3d9324fc/browser/v35.6/windows/chrome/prod.json)。共享身份主机上的其他登录请求也会命中
 - 存档状态依据 [GYAO 公告](https://support.yahoo-net.jp/SccGyao/s/)和 [Funimation 停运说明](https://help.crunchyroll.com/hc/en-us/articles/22843839604500-Funimation-End-of-Services)
 

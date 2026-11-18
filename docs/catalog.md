@@ -12,7 +12,7 @@
 | `9Now` | 9 now | imported | [services/9Now.list](../services/9Now.list) | 15 |
 | `ABCIView` | ABC iView | imported | [services/ABCIView.list](../services/ABCIView.list) | 2 |
 | `AETV` | A&E TV | imported | [services/AETV.list](../services/AETV.list) | 2 |
-| `AI` | AI | imported | [services/AI.list](../services/AI.list) | 98 |
+| `AI` | AI | imported | [services/AI.list](../services/AI.list) | 128 |
 | `Antigravity` | Google Antigravity / Gemini Code Assist / Gemini Notebook | imported | [services/Antigravity.list](../services/Antigravity.list) | 23 |
 | `Abema` | Abema | imported | [services/Abema.list](../services/Abema.list) | 12 |
 | `AcornTV` | Acorn TV (US/AU) | imported | [services/AcornTV.list](../services/AcornTV.list) | 3 |

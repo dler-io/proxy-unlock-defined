@@ -1,6 +1,55 @@
 [
   {
     "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.aistudio.google.com",
+    "reason": "Google AI 专用主机随 AI 清单选择出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "+.generativelanguage.googleapis.com",
+    "reason": "Google AI 专用主机随 AI 清单选择出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "+.makersuite.google.com",
+    "reason": "Google AI 专用主机随 AI 清单选择出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "aida.googleapis.com",
+    "reason": "Google AI 专用主机随 AI 清单选择出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "alkalicore-pa.clients6.google.com",
+    "reason": "Google AI 专用主机随 AI 清单选择出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "AI",
+    "child_rule": "alkalimakersuite-pa.clients6.google.com",
+    "reason": "Google AI 专用主机随 AI 清单选择出口"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.googleapis.com",
+    "child_service": "AI",
+    "child_rule": "generativelanguage.mtls.googleapis.com",
+    "reason": "Gemini API 的 mTLS 主机随 AI 清单选择出口"
+  },
+  {
+    "parent_service": "Google",
     "parent_rule": "+.googleapis.com",
     "child_service": "Antigravity",
     "child_rule": "+.aiplatform.eu.rep.googleapis.com",

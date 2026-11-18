@@ -1,18 +1,20 @@
 # AI
-# 服务域名规则；出口由节点的 region 配置
-# Google-owned services are maintained in Google.list
-# Apple Intelligence / Siri: https://github.com/SukkaW/Surge/blob/master/Source/non_ip/apple_intelligence.conf
-# Cursor sign-in: https://cursor.com/help/troubleshooting/sign-in-domains
-# xAI / Grok: suffix rules cover shared sign-in; keep accounts.spacex.ai exact
-# Kiro model regions: https://kiro.dev/faq/
-# Kiro endpoints: https://kiro.dev/docs/privacy-and-security/firewalls/
-# 2026-10-12 Hong Kong availability audit: ../docs/ai-hong-kong-audit.md
-# Cohere: https://cohere.com/saas-agreement
-# TRAE International: https://docs.trae.ai/ide/supported-countries-and-regions
-# Muse from Meta: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
+# Generated from: parts/AI/Core.list, services/Antigravity.list
+# Edit the canonical parts and run python3 scripts/build.py
++.aiplatform.eu.rep.googleapis.com
++.aiplatform.googleapis.com
++.aiplatform.mtls.googleapis.com
++.aiplatform.us.rep.googleapis.com
++.aistudio.google.com
 +.anthropic.com
++.antigravity.google
++.antigravity.google.com
 +.augment.com
 +.augmentcode.com
++.businessaicode.eu.rep.googleapis.com
++.businessaicode.googleapis.com
++.businessaicode.mtls.googleapis.com
++.businessaicode.us.rep.googleapis.com
 +.cerebras.ai
 +.chat.com
 +.chatgpt.com
@@ -22,6 +24,7 @@
 +.claude.com
 +.claudeusercontent.com
 +.clipdrop.co
++.cloudcode-pa.googleapis.com
 +.codeium.com
 +.codeiumdata.com
 +.cohere.ai
@@ -35,9 +38,16 @@
 +.cursor.sh
 +.cursorapi.com
 +.cursorvm.com
++.daily-cloudcode-pa.googleapis.com
++.daily-cloudcode-pa.sandbox.googleapis.com
 +.diabrowser.com
 +.diabrowser.engineering
 +.dify.ai
++.discoveryengine.googleapis.com
++.discoveryengine.mtls.googleapis.com
++.eu-discoveryengine.googleapis.com
++.eu-discoveryengine.mtls.googleapis.com
++.generativelanguage.googleapis.com
 +.githubcopilot.com
 +.grok.com
 +.grokipedia.com
@@ -48,9 +58,14 @@
 +.jasper.ai
 +.jetbrains.ai
 +.kiro.dev
++.makersuite.google.com
 +.meta.ai
 +.mistral.ai
 +.muse.ai
++.notebook.google
++.notebook.google.com
++.notebooklm.google
++.notebooklm.google.com
 +.oaistatic.com
 +.oaistatsig.com
 +.oaiusercontent.com
@@ -63,11 +78,16 @@
 +.trae.ai
 +.traeapi.us
 +.udify.app
++.us-discoveryengine.googleapis.com
++.us-discoveryengine.mtls.googleapis.com
 +.windsurf.com
 +.x.ai
 +.zed.dev
 account.jetbrains.com
 accounts.spacex.ai
+aida.googleapis.com
+alkalicore-pa.clients6.google.com
+alkalimakersuite-pa.clients6.google.com
 anysphere-binaries.s3.us-east-1.amazonaws.com
 api.app.prod.grazie.aws.intellij.net
 api.github.com
@@ -87,6 +107,7 @@ cp4.cloudflare.com
 default.exp-tas.com
 forwarder.workos.com
 gateway.ai.cloudflare.com
+generativelanguage.mtls.googleapis.com
 gspe1-ssl.ls.apple.com
 humb.apple.com
 images.workoscdn.com

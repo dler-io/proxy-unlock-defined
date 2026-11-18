@@ -119,12 +119,12 @@ def catalog_material(root=ROOT):
         directory = {"imported": "services", "review": "review", "legacy": "legacy"}.get(status)
         if directory is None or path != f"{directory}/{service}.list" or path in paths:
             raise ValueError(f"invalid catalog path or status: {service}")
-        if not item.get("name") or set(item) - {"id", "name", "path", "status", "note", "parts", "subsets"}:
+        if not item.get("name") or set(item) - {"id", "name", "path", "status", "note", "parts", "subsets", "includes"}:
             raise ValueError(f"invalid catalog fields: {service}")
         paths.add(path)
         if "parts" not in item:
-            if "subsets" in item:
-                raise ValueError(f"{service}: subsets require canonical parts")
+            if "subsets" in item or "includes" in item:
+                raise ValueError(f"{service}: subsets and includes require canonical parts")
             patterns = canonical(path)
         else:
             if not isinstance(item["parts"], list) or not item["parts"]:
@@ -164,6 +164,27 @@ def catalog_material(root=ROOT):
                              "name": subset["name"], "parent": service}, values)
         entries[service], rules[service] = item, patterns
         add_resource(service, item, patterns)
+    # A full list can reuse a standalone service. Lint each canonical owner once,
+    # but give the renderer every rule that the published URL actually contains.
+    for service, item in entries.items():
+        if "includes" not in item:
+            continue
+        included = item["includes"]
+        if (not isinstance(included, list) or not included
+                or not all(isinstance(key, str) for key in included)
+                or len(set(included)) != len(included)):
+            raise ValueError(f"{service}: includes must list distinct service IDs")
+        sources = [part["path"] for part in item["parts"]]
+        combined = list(rules[service])
+        for key in included:
+            target = entries.get(key)
+            if not target or "parts" in target or target["status"] != item["status"]:
+                raise ValueError(f"{service}: invalid standalone service in includes: {key}")
+            sources.append(target["path"])
+            combined.extend(rules[key])
+        combined.sort()
+        resources[service]["rules"] = combined
+        generated[item["path"]] = generated_text(service, sources, combined)
     actual = {str(p.relative_to(root)) for directory in ("services", "review", "legacy", "parts", "subsets")
               for p in (root / directory).rglob("*.list")}
     if actual - paths or paths - actual - generated.keys():

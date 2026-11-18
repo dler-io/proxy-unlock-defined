@@ -1,0 +1,118 @@
+# AI Core
+# 服务域名规则；出口由节点的 region 配置
+# Google AI Studio / Gemini API: https://ai.google.dev/gemini-api/docs/available-regions
+# Chrome DevTools AI: https://developer.chrome.com/docs/devtools/ai-assistance/get-started
+# Apple Intelligence / Siri: https://github.com/SukkaW/Surge/blob/master/Source/non_ip/apple_intelligence.conf
+# Cursor sign-in: https://cursor.com/help/troubleshooting/sign-in-domains
+# xAI / Grok: suffix rules cover shared sign-in; keep accounts.spacex.ai exact
+# Kiro model regions: https://kiro.dev/faq/
+# Kiro endpoints: https://kiro.dev/docs/privacy-and-security/firewalls/
+# 2026-10-12 Hong Kong availability audit: ../../docs/ai-hong-kong-audit.md
+# Cohere: https://cohere.com/saas-agreement
+# TRAE International: https://docs.trae.ai/ide/supported-countries-and-regions
+# Muse from Meta: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
++.aistudio.google.com
++.anthropic.com
++.augment.com
++.augmentcode.com
++.cerebras.ai
++.chat.com
++.chatgpt.com
++.chorus.sh
++.clau.de
++.claude.ai
++.claude.com
++.claudeusercontent.com
++.clipdrop.co
++.codeium.com
++.codeiumdata.com
++.cohere.ai
++.cohere.com
++.copilot.cloud.microsoft
++.copilot.com
++.copilot.microsoft.com
++.ct.sendgrid.net
++.cursor-cdn.com
++.cursor.com
++.cursor.sh
++.cursorapi.com
++.cursorvm.com
++.diabrowser.com
++.diabrowser.engineering
++.dify.ai
++.generativelanguage.googleapis.com
++.githubcopilot.com
++.grok.com
++.grokipedia.com
++.grokusercontent.com
++.groq.com
++.intercom.io
++.intercomcdn.com
++.jasper.ai
++.jetbrains.ai
++.kiro.dev
++.makersuite.google.com
++.meta.ai
++.mistral.ai
++.muse.ai
++.oaistatic.com
++.oaistatsig.com
++.oaiusercontent.com
++.openai.com
++.openart.ai
++.openrouter.ai
++.perplexity.ai
++.pplx.ai
++.sora.com
++.trae.ai
++.traeapi.us
++.udify.app
++.windsurf.com
++.x.ai
++.zed.dev
+account.jetbrains.com
+accounts.spacex.ai
+aida.googleapis.com
+alkalicore-pa.clients6.google.com
+alkalimakersuite-pa.clients6.google.com
+anysphere-binaries.s3.us-east-1.amazonaws.com
+api.app.prod.grazie.aws.intellij.net
+api.github.com
+api.jetbrains.cloud
+apple-relay.apple.com
+apple-relay.cloudflare.com
+apple-relay.fastly-edge.com
+apple-relay.mask.apple-dns.net
+cdn.openaimerge.com
+cdn.workos.com
+challenges.cloudflare.com
+chat.openai.com.cdn.cloudflare.net
+copilot-proxy.githubusercontent.com
+copilot-reports.github.com
+copilot-telemetry.githubusercontent.com
+cp4.cloudflare.com
+default.exp-tas.com
+forwarder.workos.com
+gateway.ai.cloudflare.com
+generativelanguage.mtls.googleapis.com
+gspe1-ssl.ls.apple.com
+humb.apple.com
+images.workoscdn.com
+js.stripe.com
+login.live.com
+login.microsoftonline.com
+o207216.ingest.sentry.io
+o33249.ingest.sentry.io
+oauth.account.jetbrains.com
+openaiapi-site.azureedge.net
+openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+openaicomproductionae4b.blob.core.windows.net
+origin-tracker.githubusercontent.com
+production-openaicom-storage.azureedge.net
+q.eu-central-1.amazonaws.com
+q.us-east-1.amazonaws.com
+rum.browser-intake-datadoghq.com
+setup.workos.com
+trae-api-sg.mchost.guru
+trae-api-us.mchost.guru
+workos.imgix.net
