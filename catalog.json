@@ -46,10 +46,10 @@
     },
     {
       "id": "Antigravity",
-      "name": "Google Antigravity / Gemini Code Assist",
+      "name": "Google Antigravity / Gemini Code Assist / Gemini Notebook",
       "path": "services/Antigravity.list",
       "status": "imported",
-      "note": "独立出口；Google 通用父域仍归 Google 服务，Antigravity 专用子域按更具体规则优先"
+      "note": "香港出口受限的 Google 业务使用独立出口，产品子域优先匹配"
     },
     {
       "id": "Abema",

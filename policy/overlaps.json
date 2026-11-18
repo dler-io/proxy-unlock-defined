@@ -113,6 +113,20 @@
   },
   {
     "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.notebook.google.com",
+    "reason": "Gemini Notebook 网页入口使用 Antigravity 的独立出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
+    "parent_rule": "+.google.com",
+    "child_service": "Antigravity",
+    "child_rule": "+.notebooklm.google.com",
+    "reason": "NotebookLM 旧版网页入口与 Gemini Notebook 使用相同的独立出口，按更具体域名优先"
+  },
+  {
+    "parent_service": "Google",
     "parent_rule": "+.googleapis.com",
     "child_service": "Antigravity",
     "child_rule": "+.us-discoveryengine.googleapis.com",

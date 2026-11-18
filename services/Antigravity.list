@@ -1,7 +1,8 @@
-# Google Antigravity / Gemini Code Assist
-# Consumer and documented enterprise endpoints
+# Google services routed separately from the Hong Kong exit
+# Antigravity, Gemini Code Assist and Gemini Notebook (NotebookLM)
 # Sources: https://antigravity.google/docs/faq
 # https://antigravity.google/docs/enterprise#network-allowlists-and-mtls-endpoints
+# https://support.google.com/gemininotebook/answer/16164461
 +.aiplatform.eu.rep.googleapis.com
 +.aiplatform.googleapis.com
 +.aiplatform.mtls.googleapis.com
@@ -19,5 +20,9 @@
 +.discoveryengine.mtls.googleapis.com
 +.eu-discoveryengine.googleapis.com
 +.eu-discoveryengine.mtls.googleapis.com
++.notebook.google
++.notebook.google.com
++.notebooklm.google
++.notebooklm.google.com
 +.us-discoveryengine.googleapis.com
 +.us-discoveryengine.mtls.googleapis.com

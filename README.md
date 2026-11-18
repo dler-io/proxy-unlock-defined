@@ -8,14 +8,14 @@
 
 | 路径 | 用途 |
 | --- | --- |
-| [`services/`](services/) | 110 份常规服务清单，包含按服务合并的完整清单 |
+| [`services/`](services/) | 111 份常规服务清单，包含按服务合并的完整清单 |
 | [`parts/`](parts/) · [`subsets/`](subsets/) | 可独立使用的源子清单，以及从源子清单生成的组合 |
 | [`review/`](review/) · [`legacy/`](legacy/) | 2 份共享或待核查合集、2 份停运服务的存档，按需显式启用 |
 | [`warp-google/`](warp-google/) | 独立维护的 Google 搜索、YouTube 和 Gemini 清单，可单独接入 |
 | [`warp-youtube/`](warp-youtube/) | 独立的 YouTube 视频域名清单，由面板的「YouTube 后台播放兼容」账户设置控制 |
 | [`catalog.json`](catalog.json) | 服务 ID、清单路径、状态和组合关系 |
 
-服务目录共收录 760 个唯一域名模式。规则校验覆盖文件格式和匹配范围，实际可用性取决于出口、账号及服务的地区政策
+服务目录共收录 780 个唯一域名模式。规则校验覆盖文件格式和匹配范围，实际可用性取决于出口、账号及服务的地区政策
 
 ## 规则格式
 

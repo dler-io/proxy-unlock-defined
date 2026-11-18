@@ -10,7 +10,7 @@
 
 ## 匹配范围
 
-同一个匹配模式应只有一个来源。父域与其他服务的具体子域有意重叠时，在 [`policy/overlaps.json`](../policy/overlaps.json) 记录双方服务、模式和理由，并确认使用端会按预期处理。Google 旗下服务统一归入 Google 清单，已被 `+.google.com`、`+.googleapis.com` 或 `+.gemini.google` 覆盖的子域不再单独列出
+同一个匹配模式应只有一个来源。父域与其他服务的具体子域有意重叠时，在 [`policy/overlaps.json`](../policy/overlaps.json) 记录双方服务、模式和理由，并确认使用端会按预期处理。Google 通用业务复用 `+.google.com`、`+.googleapis.com` 或 `+.gemini.google` 等父域规则。香港出口受限、需要独立分流的 Google 业务入口归入 `Antigravity.list`
 
 规则按域名匹配，同一主机上的不同 URL 路径会命中同一条规则。共享登录、API 和 CDN 域名应按实际用途控制范围。服务的防火墙放行清单可以用于核对依赖，是否为某个依赖指定出口需单独判断
 

@@ -80,6 +80,7 @@ class ValidationTests(unittest.TestCase):
     def test_google_services_use_google_and_warp_keeps_general_scope(self):
         ai = read_lines(ROOT / "services/AI.list")
         google = read_lines(ROOT / "services/Google.list")
+        antigravity = read_lines(ROOT / "services/Antigravity.list")
         warp = read_lines(ROOT / "warp-google/domains.list")
         youtube = read_lines(ROOT / "warp-youtube/domains.list")
 
@@ -99,7 +100,7 @@ class ValidationTests(unittest.TestCase):
                 self.assertTrue(matches(host, google))
                 self.assertTrue(matches(host, warp))
         for host in ("aistudio.google.com", "generativelanguage.googleapis.com",
-                     "antigravity.google", "notebooklm.google.com", "opal.google",
+                     "opal.google",
                      "labs.google", "aida.googleapis.com", "business.gemini.google",
                      "auth.business.gemini.google", "geller-pa.googleapis.com",
                      "proactivebackend-pa.googleapis.com", "robinfrontend-pa.googleapis.com",
@@ -109,13 +110,21 @@ class ValidationTests(unittest.TestCase):
                      "aiplatform.mtls.googleapis.com", "businessaicode.eu.rep.googleapis.com",
                      "discoveryengine.googleapis.com", "jules.google", "jules.googleapis.com",
                      "deepmind.com", "deepmind.google", "generativeai.google",
-                     "notebook.google", "notebooklm.google", "opal.goog", "opal.withgoogle.com",
+                     "opal.goog", "opal.withgoogle.com",
                      "www.google.co.jp", "www.google.com.hk", "auth.cloud.google",
                      "notebooklm.cloud.google", "payments.cloud.google",
                      "vertexaisearch.cloud.google", "preview.scf.usercontent.goog"):
             with self.subTest(google=host):
                 self.assertFalse(matches(host, ai))
                 self.assertTrue(matches(host, google))
+        for host in ("notebook.google", "notebooklm.google", "notebook.google.com", "notebooklm.google.com"):
+            with self.subTest(notebook=host):
+                self.assertIn("+." + host, antigravity)
+                self.assertFalse(matches(host, ai))
+                self.assertEqual(matches(host, google), host.endswith(".google.com"))
+        self.assertTrue(matches("antigravity.google", antigravity))
+        self.assertFalse(matches("antigravity.google", google))
+        self.assertFalse(matches("antigravity.google", ai))
         for host in ("redirector.googlevideo.com", "www.youtube.com", "www.google.co.jp",
                      "auth.cloud.google", "preview.scf.usercontent.goog"):
             with self.subTest(warp=host):
@@ -124,10 +133,13 @@ class ValidationTests(unittest.TestCase):
                      "a.b.googlevideo.com", "notgooglevideo.com", "googlevideo.com.example.com"):
             with self.subTest(video=host):
                 self.assertFalse(matches(host, warp))
-        self.assertEqual(youtube, ["+.googlevideo.com"])
-        for host in ("googlevideo.com", "redirector.googlevideo.com", "r1.googlevideo.com"):
+        self.assertEqual(youtube, [
+            "+.googlevideo.com", "+.youtu.be", "+.youtube-nocookie.com", "+.youtube.com",
+            "+.youtubekids.com", "+.yt.be", "youtube.googleapis.com", "youtubei.googleapis.com",
+        ])
+        for host in ("googlevideo.com", "redirector.googlevideo.com", "r1.googlevideo.com", "www.youtube.com"):
             self.assertTrue(matches(host, youtube))
-        for host in ("www.google.com", "www.youtube.com", "i.ytimg.com",
+        for host in ("www.google.com", "i.ytimg.com",
                      "notgooglevideo.com", "googlevideo.com.example.com"):
             self.assertFalse(matches(host, youtube))
         for host in ("chatgpt.com", "claude.ai", "cursor.com", "muse.ai"):
